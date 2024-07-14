@@ -9,6 +9,12 @@ import Mathlib.Tactic
 
 variable (X : Type)
 
+--#check Set.subset_refl
+--#check Set.subset_rfl
+#check subset_rfl
+#check subset_refl
+#check Set.subset_def
+
 namespace Set
 
 lemma subset_def' (S T : Set X) :
