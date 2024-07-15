@@ -11,7 +11,7 @@ a proof that `S ⊆ S`."
 
 namespace MySet
 
-variable (𝒳 : Type)
+variable (𝓧 : Type)
 
 /-- **TODO** -/
 TacticDoc rw
@@ -31,7 +31,7 @@ NewTactic rw intro apply exact
 TheoremDoc MySet.subset_refl as "subset_refl" in "Set"
 
 /-- Every set $S$ is a subset of itself. -/
-Statement subset_refl (S : Set 𝒳) : S ⊆ S := by
+Statement subset_refl (S : Set 𝓧) : S ⊆ S := by
   Hint "Start with `rw [subset_def]` to replace `S ⊆ S` with its definition."
   rw [subset_def]
   Hint "Now we've got to prove something for all `x`, so `intro x`."
