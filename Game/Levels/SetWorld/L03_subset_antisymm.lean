@@ -1,4 +1,3 @@
-import Game.Metadata
 import Game.Levels.SetWorld.L02_subset_trans
 
 World "SetWorld"

@@ -1,4 +1,3 @@
-import Game.Metadata
 import Game.Levels.SetWorld.L01_subset_refl
 import Mathlib.Tactic.ApplyAt
 
