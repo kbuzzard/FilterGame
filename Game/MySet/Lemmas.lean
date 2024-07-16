@@ -1,8 +1,6 @@
 import Game.Metadata
 import Mathlib.Data.Set.Basic
 
-#check Set.subset_def
-
 namespace MySet
 
 /--
