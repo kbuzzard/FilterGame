@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Jul 14 23:00:38 2024\n"
+"POT-Creation-Date: Tue Jul 16 08:47:59 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -47,6 +47,18 @@ msgid "**TODO**"
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
+msgid "`subset_def` is the proof of `(S ⊆ T) ↔ ∀ x, x ∈ S → x ∈ T`.\n"
+"\n"
+"If you're working with subsets from first principles, then `rw [subset_def]`\n"
+"will change occurrences of `S ⊆ T` in the goal to `∀ x, x ∈ S → x ∈ T`.\n"
+"\n"
+"Variants:\n"
+"\n"
+"* `rw [subset_def] at h` (change the definition at hypothesis `h`)\n"
+"* `rw [subset_def] at *` (change the definition everywhere)"
+msgstr ""
+
+#: Game.Levels.SetWorld.L01_subset_refl
 msgid "Every set $S$ is a subset of itself."
 msgstr ""
 
@@ -83,14 +95,14 @@ msgid "In this tutorial level we'll learn about sets, subsets, and the intersect
 "\n"
 "Our sets will all be subsets of a fixed \"base set\" `𝓧`.\n"
 "In particular, whenever we say \"let `S` be a set\" in this level, we mean \"let `S` be a set\n"
-"of elements of `𝒮`\", and we write `S : Set 𝓧`.\n"
+"of elements of `𝓧`\", and we write `S : Set 𝓧`.\n"
 "\n"
-"In Lean the base set `𝒮` is called a *type*. If you're used to also thinking of `𝓧` as a set,\n"
+"In Lean the base set `𝓧` is called a *type*. If you're used to also thinking of `𝓧` as a set,\n"
 "this shouldn't cause any problems, but there is one notational difference. Lean uses the notation\n"
 "`x : 𝓧` to mean that `x` is an element of the base type `𝓧`, but for `S` a set, Lean uses\n"
 "the notation `x ∈ S` to mean that `x` is an element `S`.\n"
 "\n"
-"Press **TODO** to continue."
+"Click \"Start →\" to continue."
 msgstr ""
 
 #: Game
