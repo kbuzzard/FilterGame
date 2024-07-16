@@ -2,6 +2,7 @@ import Game.Levels.SetWorld.L01_subset_refl
 import Game.Levels.SetWorld.L02_subset_trans
 import Game.Levels.SetWorld.L03_subset_antisymm
 import Game.Levels.SetWorld.L04_subset_univ
+import Game.Levels.SetWorld.L05_univ_subset
 
 World "SetWorld"
 Title "Set World"

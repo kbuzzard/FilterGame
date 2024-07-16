@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jul 16 14:49:44 2024\n"
+"POT-Creation-Date: Wed Jul 17 00:12:45 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -346,6 +346,89 @@ msgstr ""
 msgid "Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works\n"
 "is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which\n"
 "applies for all `x`, and in particular it applies for `x = a`, which is the goal."
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "The \"universal set\""
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "Every set in this world is a subset of `𝓧`, but `𝓧` is a *type*, not a set.\n"
+"So what is the set which contains every element of `𝓧`? It's called `univ`. And\n"
+"the axiom you need to know is `mem_univ (x : 𝓧) : x ∈ univ`. You should `apply mem_univ`\n"
+"when faced with the goal `x ∈ univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "`mem_univ` is the proof of `∀ x, x ∈ univ`.\n"
+"\n"
+"When faced with a goal `a ∈ univ`, you can `apply mem_univ` to close it. You can\n"
+"also do `exact mem_univ a`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "Any set `S` satisfies `S ⊆ univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "If $S ⊆ T$ and $T\\subseteq S$ then $S = T$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L04_subset_univ
+msgid "Try and the turn the goal into `x ∈ univ` and then `apply mem_univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Nothing's bigger than the universal set"
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "See if you can use the tactics we've learnt to prove that if `univ ⊆ S`\n"
+"then `S = univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "`univ_subset` is the proof that `univ ⊆ S → S = univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Any set `S` satisfies `S ⊆ univ`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "If $univ ⊆ S$ then $S = univ$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Start with `intro h`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `rw [subset_def] at h`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `ext a`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `constructor`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `intro h2`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `apply mem_univ`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Can you finish in one line?"
+msgstr ""
+
+#: Game.Levels.SetWorld.L05_univ_subset
+msgid "Try `apply «{h}»`."
 msgstr ""
 
 #: Game.Levels.SetWorld
