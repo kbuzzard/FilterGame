@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Apr 10 15:31:40 2024\n"
+"POT-Creation-Date: Sun Jul 14 23:00:38 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -20,56 +20,145 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "Hello World"
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Sets are subsets of themselves"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "If `S` and `T` are sets, then `S ⊆ T` means that `S` is a *subset* of `T`.\n"
+"This means that every element of `S` is also an element of `T`. Let me talk you through\n"
+"a proof that `S ⊆ S`."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You can either start using `«{h}»` or `«{g}»`."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "**TODO**"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use `«{h}»` now."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "**TODO**"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use `«{g}»` now."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "**TODO**"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This last message appears if the level is solved."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "**TODO**"
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Every set $S$ is a subset of itself."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Every set $S$ is a subset of itself."
 msgstr ""
 
-#: Game
-msgid "Hello World Game"
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Start with `rw [subset_def]` to replace `S ⊆ S` with its definition."
 msgstr ""
 
-#: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use markdown."
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Now we've got to prove something for all `x`, so `intro x`."
 msgstr ""
 
-#: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Now we assume `x ∈ S` with `intro h`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "And now our goal is exactly `h`, so `exact h` or `apply h` will finish the level."
+msgstr ""
+
+#: Game.Levels.SetWorld.L01_subset_refl
+msgid "Nice! Let's now prove another basic property of subsets."
+msgstr ""
+
+#: Game.Levels.SetWorld
+msgid "Set World"
+msgstr ""
+
+#: Game.Levels.SetWorld
+msgid "In this tutorial level we'll learn about sets, subsets, and the intersection of two sets.\n"
 "\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
+"Our sets will all be subsets of a fixed \"base set\" `𝓧`.\n"
+"In particular, whenever we say \"let `S` be a set\" in this level, we mean \"let `S` be a set\n"
+"of elements of `𝒮`\", and we write `S : Set 𝓧`.\n"
 "\n"
-"Use markdown."
+"In Lean the base set `𝒮` is called a *type*. If you're used to also thinking of `𝓧` as a set,\n"
+"this shouldn't cause any problems, but there is one notational difference. Lean uses the notation\n"
+"`x : 𝓧` to mean that `x` is an element of the base type `𝓧`, but for `S` a set, Lean uses\n"
+"the notation `x ∈ S` to mean that `x` is an element `S`.\n"
+"\n"
+"Press **TODO** to continue."
+msgstr ""
+
+#: Game
+msgid "The Filter Game"
+msgstr ""
+
+#: Game
+msgid "# Welcome to the Filter Game\n"
+"\n"
+"## What is this game?\n"
+"\n"
+"There's a mathematical object called a *filter*. It doesn't get much love.\n"
+"It's not often taught in an undergraduate degree. Furthermore, there are\n"
+"bad ways to teach it, which can end up with you being more confused than\n"
+"when you started. Indeed, the author of this game was confused about filters\n"
+"for many years.\n"
+"\n"
+"This game is an attempt to explain filters in an intuitive way, as\n"
+"\"generalised sets\". If you have been brainwashed by the textbook\n"
+"approach to mathematics, you'll know that infinity is not a number,\n"
+"that `dy/dx` doesn't mean `dy` divided by `dx` because `dx` isn't\n"
+"a number, and that `0.999999999999999... = 1` because the difference\n"
+"between them is infinitely small, and there are no infinitely small\n"
+"numbers apart from `0`. Well, filters let you recover these intuitive\n"
+"ideas in a rigorous way which doesn't lead to contradictions.\n"
+"\n"
+"## What are the prerequisites for playing?\n"
+"\n"
+"First, there are some mathematical prerequisites. You will need to know\n"
+"about the abstract concepts of sets and subsets, and functions between sets.\n"
+"You don't need much more than that. You can learn about these ideas\n"
+"in any first course or textbook on abstract mathematics, for example\n"
+"Martin Liebeck's book \"A Concise Introduction to Pure Mathematics\".\n"
+"\n"
+"And then there are some Lean prerequisites. Lean is an interactive\n"
+"theorem prover, and this game is written in Lean; you can see\n"
+"the source code to the game [here](https://github.com/kbuzzard/FilterGame)\n"
+"on GitHub, and even clone it yourself and add your own levels if you want.\n"
+"In this game I will assume you know the following basic Lean tactics:\n"
+"**TODO** fill these in. If you don't know these tactics, then you could\n"
+"try playing a few worlds in the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4).\n"
+"If you've platyed through Tutorial World, Addition World and Implication World in that\n"
+"game, then you know enough about Lean to play the Filter Game.\n"
+"\n"
+"## Getting started\n"
+"\n"
+"If you satisfy the prerequisites, get started by clicking on `Set World`!"
+msgstr ""
+
+#: Game
+msgid "Version 0.1.0: experimental prerelease.\n"
+"\n"
+"## History\n"
+"\n"
+"The Filter Game has been a long time coming. I (Kevin Buzzard)\n"
+"started experimenting with it in about 2020. The first Lean 4 project\n"
+"I ever embarked on in 2021 was some Filter Game levels (I had to define\n"
+"a filter in Lean 4 as part of it!). I then supervised a second\n"
+"year group project on filters in 2023, and Billy Miao put together\n"
+"a preliminary version (in Lean 3) as part of the project. I thank\n"
+"Billy and the other group members **TODO** for their thoughts on\n"
+"how things should be put together.\n"
+"\n"
+"What finally pushed this game into something which I felt was finally\n"
+"ready, was the London Mathematical Society, who invited me to give\n"
+"a course as part of their 2024 Summer School at the University of Essex.\n"
+"I chose to give a course on filters, and made this game as part of\n"
+"the learning experience for the students."
 msgstr ""
 
 #: Game
