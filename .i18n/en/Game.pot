@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jul 16 08:47:59 2024\n"
+"POT-Creation-Date: Tue Jul 16 14:27:34 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -31,19 +31,154 @@ msgid "If `S` and `T` are sets, then `S ⊆ T` means that `S` is a *subset* of `
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
-msgid "**TODO**"
+msgid "## Summary\n"
+"\n"
+"If `h` is a proof of an implication `X ↔ Y` or an equality `X = Y`, then `rw [h]` will change\n"
+"all `X`s in the goal to `Y`s. It's the way to \\\"substitute in\\\".\n"
+"\n"
+"### Example:\n"
+"\n"
+"If your goal is\n"
+"```\n"
+"A ⊆ B\n"
+"```\n"
+"\n"
+"then\n"
+"\n"
+"`rw [subset_def]`\n"
+"\n"
+"will change the goal into `∀ x ∈ A, x ∈ B`.\n"
+"\n"
+"## Variants\n"
+"\n"
+"Say `h : X = Y` or `h : X ↔ Y`.\n"
+"\n"
+"* `rw [← h]` (changes `Y`s to `X`s; get the back arrow by typing `\\left ` or `\\l`.)\n"
+"\n"
+"* `rw [h1, h2]` (a sequence of rewrites)\n"
+"\n"
+"* `rw [h] at h2` (changes `X`s to `Y`s in hypothesis `h2`)\n"
+"\n"
+"* `rw [h] at h1 h2 ⊢` (changes `X`s to `Y`s in two hypotheses and the goal;\n"
+"get the `⊢` symbol with `\\|-`.)\n"
+"\n"
+"* `repeat rw [subset_def]` will change all `S ⊆ T`s into their definitions,\n"
+"until there are no more matches.\n"
+"\n"
+"* `nth_rewrite 2 [h]` will change only the second `X` in the goal to `Y`.\n"
+"\n"
+"## Common errors\n"
+"\n"
+"* You need the square brackets. `rw h` is never correct.\n"
+"\n"
+"* If `h` is not a *proof* of an *equality* (a statement of the form `X = Y`)\n"
+"or a *bi-implication* (a statement of the form `X ↔ Y`),\n"
+"for example if `h` is a function or an implication,\n"
+"then `rw` is not the tactic you want to use. For example,\n"
+"`rw [P = Q]` is never correct: `P = Q` is the theorem *statement*,\n"
+"not the proof. If `h : P = Q` is the proof, then `rw [h]` will work.\n"
+"\n"
+"## Details\n"
+"\n"
+"The `rw` tactic is a way to do \\\"substituting in\\\". There\n"
+"are two distinct situations where you can use this tactic.\n"
+"\n"
+"1) Basic usage: if `h : A = B` is an assumption or\n"
+"the proof of a theorem, and if the goal contains one or more `A`s, then `rw [h]`\n"
+"will change them all to `B`'s. The tactic will error\n"
+"if there are no `A`s in the goal.\n"
+"\n"
+"2) Advanced usage: Assumptions coming from theorem proofs\n"
+"often have missing pieces. For example `subset_def`\n"
+"is really a proof that `?₁ ⊆ ?₂ ↔ ∀ x ∈ ?₁, x ∈ ?₂`,\n"
+"or, if you like, a proof that `∀ S T, S ⊆ T ↔ ∀ x ∈ S, x ∈ T` because `subset_def` really\n"
+"is a function, with `S` and `T` the inputs.\n"
+"In this situation `rw` will look through the goal\n"
+"for any subterm of the form `?₁ ⊆ ?₂`, and the moment it\n"
+"finds a match it solves for the `?`s (e.g. `?₁ = A` and `?₂ = B`) and then\n"
+"then changes all `A ⊆ B`s to `∀ x ∈ A, x ∈ B`s.\n"
+"\n"
+"If you can't remember the *name* of the proof of an equality or bi-implication, look it up in\n"
+"the list of lemmas on the right."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
-msgid "**TODO**"
+msgid "## Summary\n"
+"\n"
+"If the goal is `∀ x, P x`, this mean that you have to prove something for every `x`.\n"
+"A mathematician might say \"Now let `x` be arbitrary\". In Lean we say `intro x`.\n"
+"This will change the goal to `P x`. Note we could equally say `intro fish`,\n"
+"which would change the goal to `P fish`.\n"
+"\n"
+"If the goal is `P → Q`, then `intro h` will introduce `h : P` as a hypothesis,\n"
+"and change the goal to `Q`. Mathematically, it says that to prove $P \\implies Q$,\n"
+"we can assume $P$ and then prove $Q$.\n"
+"\n"
+"### Example:\n"
+"\n"
+"If your goal is `∀ x ∈ S, x ∈ T` then `intro a` will give you a new variable `a`\n"
+"and the goal will become `a ∈ S → a ∈ T`. A second `intro h` will now give you the\n"
+"hypothesis `h : a ∈ S`, and the goal will change to `a ∈ T`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
-msgid "**TODO**"
+msgid "## Summary\n"
+"\n"
+"This tactic has two distinct uses.\n"
+"\n"
+"1) If `t : P → Q` is a proof that $P \\implies Q$, and `h : P` is a proof of `P`,\n"
+"then `apply t at h` will change `h` to a proof of `Q`. The idea is that if\n"
+"you know `P` is true, then you can deduce from `t` that `Q` is true.\n"
+"\n"
+"2) If your goal is a special case of a theorem `P` (for example perhaps `P` says\n"
+"\"for all `x`, ...\" and your goal has a specific example of an `x`),\n"
+"then `apply P` will attempt to figure out all the variable substitutions necessary\n"
+"to close the goal.\n"
+"\n"
+"### Example:\n"
+"\n"
+"**TODO** more appropriate examples.\n"
+"\n"
+"`succ_inj x y` is a proof that `succ x = succ y → x = y`.\n"
+"\n"
+"So if you have a hypothesis `h : succ (a + 37) = succ (b + 42)`\n"
+"then `apply succ_inj at h` will change `h` to `a + 37 = b + 42`.\n"
+"You could write `apply succ_inj (a + 37) (b + 42) at h`\n"
+"but Lean is smart enough to figure out the inputs to `succ_inj`.\n"
+"\n"
+"### Example\n"
+"\n"
+"If the goal is `a * b = 7`, then `apply succ_inj` will turn the\n"
+"goal into `succ (a * b) = succ 7`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
-msgid "**TODO**"
+msgid "## Summary\n"
+"\n"
+"If the goal is a statement `P`, then `exact h` will close the goal if `h` is a proof of `P`.\n"
+"\n"
+"### Example\n"
+"\n"
+"If the goal is `x ∈ S` and you have a hypothesis `h : x ∈ S`\n"
+"then `exact h` will solve the goal.\n"
+"\n"
+"### Non-example\n"
+"\n"
+"If the goal is `x ∈ S`, then `exact x ∈ S` won't work. Exact eats a *proof*\n"
+"of a mathematical result, not a *statement*.\n"
+"\n"
+"### Exact needs to be exactly right\n"
+"\n"
+"**TODO** do `apply` example for `mem_univ` or whatever.\n"
+"\n"
+"Note that `exact add_zero` will *not work* in the previous example;\n"
+"for `exact h` to work, `h` has to be *exactly* a proof of the goal.\n"
+"`add_zero` is a proof of `∀ n, n + 0 = n` or, if you like,\n"
+"a proof of `? + 0 = ?` where `?` needs to be supplied by the user.\n"
+"This is in contrast to `rw` and `apply`, which will \\\"guess the inputs\\\"\n"
+"if necessary. If the goal is `x + 0 = x` then `rw [add_zero]`\n"
+"and `rw [add_zero x]` will both change the goal to `x = x`,\n"
+"because `rw` guesses the input to the function `add_zero`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
@@ -84,6 +219,133 @@ msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
 msgid "Nice! Let's now prove another basic property of subsets."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Set inclusion is transitive"
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "In this level, we'll show the \"geometrically obvious\"\n"
+"fact that if `S`, `T` and `U` are sets, with `S ⊆ T`\n"
+"and `T ⊆ U`, then `S ⊆ U`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "If $S ⊆ T$ and $T\\subseteq U$ then $S\\subseteq U$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "If $S ⊆ T$ and $T\\subseteq U$ then $S\\subseteq U$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Start with `rw [subset_def] at *` to replace all occurences of the `⊆` symbol with\n"
+"their definitions."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Now we've got to prove something for all `x`, so `intro x`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Now we assume `x ∈ S` with `intro h`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Now we just have to put the pieces together.\n"
+"You can either argue forwards, with `apply hST at h`,\n"
+"or you can argue backwards with `apply hTU`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Now figure out how to use `hTU` to finish things off."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "`apply hTU at h` or `apply hTU` make progress. Then `exact h`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Now figure out how to use `hST` to finish things off."
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "`apply hST at h` or `apply hST` make progress. Then `exact h`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L02_subset_trans
+msgid "Nice! Let's now prove another basic property of subsets."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "Set inclusion is antisymmetric"
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "The subset relation `⊆` is a *partial order*. This means that it's reflexive,\n"
+"transitive, and antisymmetric. In this level we learn two new tactics\n"
+"to prove that if `S ⊆ T` and `T ⊆ S` then `S = T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "## Summary\n"
+"\n"
+"If the goal is really two goals, for example `P ↔ Q` or `P ∧ Q`, then `constructor`\n"
+"it into two different goals.\n"
+"\n"
+"### Example\n"
+"\n"
+"`constructor` turns the goal `P ↔ Q` into the two goals `P → Q` and `Q → P`.\n"
+"\n"
+"### Example\n"
+"\n"
+"`constructor` turns the goal `P ∧ Q` into the two goals `P` and `Q`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "## Summary\n"
+"\n"
+"If the goal is the equaality of two sets `S = T`, then `ext a` introduces a new variable `a`\n"
+"and turns the goal into `a ∈ S ↔ a ∈ T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "If $S ⊆ T$ and $T\\subseteq S$ then $S = T$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "If $S ⊆ T$ and $T\\subseteq S$ then $S = T$."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "We have to prove that two sets are equal. It's an axiom of mathematics\n"
+"(\"set extensionality\") that two sets are equal if they have the same elements.\n"
+"In Lean the `ext` tactic applies this axiom. Start with `ext a`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "We now have to prove an if and only if statement `P ↔ Q`, which is the same as proving\n"
+"`P → Q` and `Q → P`. Now use the `constructor` tactic to split the goal up into these two goals."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "This goal is going to follow from the fact that `S ⊆ T`. So let's `rw [subset_def] at hST`\n"
+"to get it into a more useful form"
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "You've seen this kind of goal before in the previous level. See if you can take it from here."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "Now we have to go the other way. Here's a quick approach: try `apply hTS`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L03_subset_antisymm
+msgid "Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works\n"
+"is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which\n"
+"applies for all `x`, and in particular it applies for `x = a`, which is the goal."
 msgstr ""
 
 #: Game.Levels.SetWorld
