@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 17 00:13:49 2024\n"
+"POT-Creation-Date: Wed Jul 17 09:36:03 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -429,6 +429,55 @@ msgstr ""
 
 #: Game.Levels.SetWorld.L05_univ_subset
 msgid "Try `apply «{h}»`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "Intersections"
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "The last thing we need to know about subsets is how to work with the intersection\n"
+"`S ∩ T` of two subsets `S` and `T`. The key lemma you need is\n"
+"`mem_inter_iff x S T`, which is a proof of `x ∈ S ∩ T ↔ x ∈ S ∧ x ∈ T`. That `∧` symbol\n"
+"means \"and\"."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "## Summary\n"
+"\n"
+"If the goal is a true statement in pure logic, like `P → (Q → P)` or `P ∧ Q → Q ∧ P`\n"
+"(where `P` and `Q` can represent any mathematical true/false statements) then\n"
+"the `tauto` tactic will solve it."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "`mem_inter_iff` is the proof of `∀ x S T, x ∈ S ∩ T ↔ x ∈ S ∧ x ∈ T`.\n"
+"\n"
+"Note that `mem_inter_iff` has three explicit inputs, `x`, `S` and `T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "`S ∩ T = T ∩ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "`S ∩ T = T ∩ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "Start with `ext a`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "Now `rw [mem_inter_iff]`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "Now do it again, and the goal will be purely a logic goal."
+msgstr ""
+
+#: Game.Levels.SetWorld.L06_inter_comm
+msgid "This has now got nothing to do with sets. Prove this logic goal with `tauto`."
 msgstr ""
 
 #: Game.Levels.SetWorld

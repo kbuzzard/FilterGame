@@ -1,6 +1,7 @@
 import Game.Levels.SetWorld.L05_univ_subset
 
 World "SetWorld"
+
 Level 6
 
 Title "Intersections"
@@ -9,6 +10,17 @@ Introduction "The last thing we need to know about subsets is how to work with t
 `S ∩ T` of two subsets `S` and `T`. The key lemma you need is
 `mem_inter_iff x S T`, which is a proof of `x ∈ S ∩ T ↔ x ∈ S ∧ x ∈ T`. That `∧` symbol
 means \"and\"."
+
+/--
+## Summary
+
+If the goal is a true statement in pure logic, like `P → (Q → P)` or `P ∧ Q → Q ∧ P`
+(where `P` and `Q` can represent any mathematical true/false statements) then
+the `tauto` tactic will solve it.
+-/
+TacticDoc tauto
+
+NewTactic tauto
 
 namespace MySet
 
@@ -30,21 +42,11 @@ TheoremDoc MySet.inter_comm as "inter_comm" in "Set"
 
 /-- `S ∩ T = T ∩ S`. -/
 Statement inter_comm (S T : Set 𝓧) : S ∩ T = T ∩ S := by
-  Hint (hidden := true) "Start with `ext a`."
+  Hint "Start with `ext a`."
   ext a
-  Hint (hidden := true) "Now `rw [mem_inter_iff]`"
+  Hint "Now `rw [mem_inter_iff]`"
   rw [mem_inter_iff]
-  Hint (hidden := true) "Now do it again!"
+  Hint "Now do it again, and the goal will be purely a logic goal."
   rw [mem_inter_iff]
-  Hint (hidden := true) "Split the `↔` with `constructor`."
-  constructor
-  Hint "This is now tedious because you have to prove the same thing twice. **TODO** refactor? Start with `intro h`"
-  intro h
-  Hint "Now do `cases' h with h1 h2` to get to the two hypotheses."
-  cases' h with h1 h2
-  Hint "Now `constructor` and you can finish it."
-  constructor
-  exact h2
-  exact h1
-  Hint "This is too tedious -- use `aesop`."
-  aesop
+  Hint "This has now got nothing to do with sets. Prove this logic goal with `tauto`."
+  tauto
