@@ -43,6 +43,6 @@ Statement subset_inter {A S T : Set 𝓧} (hAS : A ⊆ S) (hAT : A ⊆ T) :
     exact hx
   · exact hAT _ hx
 
-Conclusion "That's enough practice with sets. In Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works
-is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which
-applies for all `x`, and in particular it applies for `x = a`, which is the goal."
+Conclusion "That's enough practice with sets. You can either now do some practice
+with functions in Function World, or you can start to learn about filters
+in Filter World."
