@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 17 23:39:07 2024\n"
+"POT-Creation-Date: Wed Jul 17 23:45:28 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -642,9 +642,13 @@ msgid "Version 0.1.0: experimental prerelease.\n"
 msgstr ""
 
 #: Game
-msgid "Game Template"
+msgid "A Lean game introducing filters."
 msgstr ""
 
 #: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+msgid "This game introduces the mathematical concept of a filter.\n"
+"You should be familiar with some basic Lean tactics (for example, those\n"
+"used in Addition World and Inequality World in the Natural Number Game),\n"
+"and mathematically you should be happy with the ideas of abstract sets\n"
+"and functions."
 msgstr ""

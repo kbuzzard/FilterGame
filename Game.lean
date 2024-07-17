@@ -69,9 +69,14 @@ the learning experience for the students.
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "English"
-CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
+CaptionShort "A Lean game introducing filters."
+CaptionLong "This game introduces the mathematical concept of a filter.
+You should be familiar with some basic Lean tactics (for example, those
+used in Addition World and Inequality World in the Natural Number Game),
+and mathematically you should be happy with the ideas of abstract sets
+and functions."
 Prerequisites "Knowledge of some basic Lean tactics" -- add this if your game depends on other games
+-- **TODO** need an image?
 -- CoverImage "images/cover.png"
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
