@@ -4,6 +4,7 @@ import Game.Levels.SetWorld.L03_subset_antisymm
 import Game.Levels.SetWorld.L04_subset_univ
 import Game.Levels.SetWorld.L05_univ_subset
 import Game.Levels.SetWorld.L06_inter_comm
+import Game.Levels.SetWorld.L07_inter_subset_left
 
 World "SetWorld"
 Title "Set World"

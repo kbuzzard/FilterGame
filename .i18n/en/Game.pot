@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 17 09:36:03 2024\n"
+"POT-Creation-Date: Wed Jul 17 09:46:00 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -478,6 +478,50 @@ msgstr ""
 
 #: Game.Levels.SetWorld.L06_inter_comm
 msgid "This has now got nothing to do with sets. Prove this logic goal with `tauto`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "`S ∩ T ⊆ S`"
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "Let's prove `inter_subset_left`, the statement that `S ∩ T ⊆ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "## Summary\n"
+"\n"
+"If the goal is a true statement in pure logic, like `P → (Q → P)` or `P ∧ Q → Q ∧ P`\n"
+"(where `P` and `Q` can represent any mathematical true/false statements) then\n"
+"the `tauto` tactic will solve it."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "`S ∩ T ⊆ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "`S ∩ T ⊆ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "There's a subtlety here, so let me talk you through it. Start of course with\n"
+"`rw [subset_def]`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "Now you can see `x ∈ S ∩ T` in the goal, but `rw [mem_inter_iff]` will *fail*, because\n"
+"\"`rw` doesn't work under binders\". In other words, that `x` isn't a variable yet,\n"
+"it's a \"for all `x`\". Make it a variable with `intro x`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "Now you have an actual `x : 𝓧` in your list of variables, so `rw [mem_inter_iff]` will\n"
+"work."
+msgstr ""
+
+#: Game.Levels.SetWorld.L07_inter_subset_left
+msgid "Now finish this pure logic goal in one line."
 msgstr ""
 
 #: Game.Levels.SetWorld
