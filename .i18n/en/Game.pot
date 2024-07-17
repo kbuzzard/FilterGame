@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 17 22:28:41 2024\n"
+"POT-Creation-Date: Wed Jul 17 23:39:07 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -522,6 +522,36 @@ msgstr ""
 
 #: Game.Levels.SetWorld.L07_inter_subset_left
 msgid "Now finish this pure logic goal in one line."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "The final level in this tutorial is one we'll need later, so we'd\n"
+"better prove it now. It's a simple criterion for proving `A ⊆ S ∩ T`, namely\n"
+"checking that `A ⊆ S` and `A ⊆ T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "`S ∩ T ⊆ S`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "I would start with `rw [subset_def] at *`. If you find yourself\n"
+"later on with the goal `x ∈ S ∧ x ∈ T`, then\n"
+"use the `constructor` tactic to break into two goals `x ∈ S` and `x ∈ T`."
+msgstr ""
+
+#: Game.Levels.SetWorld.L08_subset_inter
+msgid "That's enough practice with sets. You can either now do some practice\n"
+"with functions in Function World, or you can start to learn about filters\n"
+"in Filter World."
 msgstr ""
 
 #: Game.Levels.SetWorld
