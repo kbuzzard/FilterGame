@@ -10,18 +10,6 @@ Introduction "The final level in this tutorial is one we'll need later, so we'd
 better prove it now. It's a simple criterion for proving `A ⊆ S ∩ T`, namely
 checking that `A ⊆ S` and `A ⊆ T`."
 
-#check Set.subset_inter
-/--
-## Summary
-
-If the goal is a true statement in pure logic, like `P → (Q → P)` or `P ∧ Q → Q ∧ P`
-(where `P` and `Q` can represent any mathematical true/false statements) then
-the `tauto` tactic will solve it.
--/
-TacticDoc tauto
-
-NewTactic tauto
-
 namespace MySet
 
 variable (𝓧 : Type)
