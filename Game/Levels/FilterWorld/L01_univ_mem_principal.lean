@@ -22,11 +22,11 @@ In the first three levels of this game, we'll prove three easy facts
 about `𝓟 A` using `mem_principal`. The first one is about the set
 `univ` whose elements are all of `𝓧`. "
 
-namespace MyFilter
+namespace MyGame
 
 variable {𝓧 : Type}
 
-open Filter MySet
+open Filter MyGame
 
 lemma mem_principal {A S : Set 𝓧} : S ∈ 𝓟 A ↔ A ⊆ S := by rfl
 
@@ -34,9 +34,9 @@ lemma mem_principal {A S : Set 𝓧} : S ∈ 𝓟 A ↔ A ⊆ S := by rfl
 `mem_principal` is the proof that `S ∈ 𝓟 A ↔ A ⊆ S`. This is true
 because it's precisely the *definition* of `𝓟 A`.
 -/
-TheoremDoc MyFilter.mem_principal as "mem_principal" in "Filter"
+TheoremDoc MyGame.mem_principal as "mem_principal" in "Filter"
 
-NewTheorem MyFilter.mem_principal
+NewTheorem MyGame.mem_principal
 
 /-- `univ` is an element of `𝓟 A`. -/
 Statement (A : Set 𝓧) : univ ∈ 𝓟 A := by

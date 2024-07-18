@@ -10,7 +10,7 @@ So what is the set which contains every element of `𝓧`? It's called `univ`. A
 the axiom you need to know is `mem_univ (x : 𝓧) : x ∈ univ`. You should `apply mem_univ`
 when faced with the goal `x ∈ univ`."
 
-namespace MySet
+namespace MyGame
 
 def univ := @Set.univ
 
@@ -22,14 +22,14 @@ lemma mem_univ {𝓧 : Type} (x : 𝓧) : x ∈ univ := by trivial
 When faced with a goal `a ∈ univ`, you can `apply mem_univ` to close it. You can
 also do `exact mem_univ a`.
 -/
-TheoremDoc MySet.mem_univ as "mem_univ" in "Set"
+TheoremDoc MyGame.mem_univ as "mem_univ" in "Set"
 
-NewTheorem MySet.mem_univ
+NewTheorem MyGame.mem_univ
 
 variable (𝓧 : Type)
 
 /-- Any set `S` satisfies `S ⊆ univ`. -/
-TheoremDoc MySet.subset_univ as "subset_univ" in "Set"
+TheoremDoc MyGame.subset_univ as "subset_univ" in "Set"
 
 /-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$. -/
 Statement subset_univ (S : Set 𝓧) : S ⊆ univ := by

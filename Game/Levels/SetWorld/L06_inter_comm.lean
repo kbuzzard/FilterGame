@@ -22,7 +22,7 @@ TacticDoc tauto
 
 NewTactic tauto
 
-namespace MySet
+namespace MyGame
 
 lemma mem_inter_iff {𝓧 : Type} (x : 𝓧) (S T : Set 𝓧) : x ∈ S ∩ T ↔ x ∈ S ∧ x ∈ T := by rfl
 
@@ -31,14 +31,14 @@ lemma mem_inter_iff {𝓧 : Type} (x : 𝓧) (S T : Set 𝓧) : x ∈ S ∩ T �
 
 Note that `mem_inter_iff` has three explicit inputs, `x`, `S` and `T`.
 -/
-TheoremDoc MySet.mem_inter_iff as "mem_inter_iff" in "Set"
+TheoremDoc MyGame.mem_inter_iff as "mem_inter_iff" in "Set"
 
-NewTheorem MySet.mem_inter_iff
+NewTheorem MyGame.mem_inter_iff
 
 variable (𝓧 : Type)
 
 /-- `S ∩ T = T ∩ S`. -/
-TheoremDoc MySet.inter_comm as "inter_comm" in "Set"
+TheoremDoc MyGame.inter_comm as "inter_comm" in "Set"
 
 /-- `S ∩ T = T ∩ S`. -/
 Statement inter_comm (S T : Set 𝓧) : S ∩ T = T ∩ S := by

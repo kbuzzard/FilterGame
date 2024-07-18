@@ -1,5 +1,6 @@
 import Game.Metadata
-import Game.MySet.Lemmas
+import Mathlib.Data.Set.Basic
+
 World "SetWorld"
 Level 1
 
@@ -9,7 +10,7 @@ Introduction "If `S` and `T` are sets, then `S ⊆ T` means that `S` is a *subse
 This means that every element of `S` is also an element of `T`. Let me talk you through
 a proof that `S ⊆ S`."
 
-namespace MySet
+namespace MyGame
 
 variable (𝓧 : Type)
 
@@ -172,6 +173,11 @@ TacticDoc exact
 NewTactic rw intro apply exact
 
 /--
+`S` is a subset of `T` if and only if every element of `S` is also an element of `T`.
+-/
+theorem subset_def {𝓧 : Type} {S T : Set 𝓧} : (S ⊆ T) ↔ ∀ x, x ∈ S → x ∈ T := by rfl
+
+/--
 `subset_def` is the proof of `(S ⊆ T) ↔ ∀ x, x ∈ S → x ∈ T`.
 
 If you're working with subsets from first principles, then `rw [subset_def]`
@@ -182,14 +188,14 @@ Variants:
 * `rw [subset_def] at h` (change the definition at hypothesis `h`)
 * `rw [subset_def] at *` (change the definition everywhere)
 -/
-TheoremDoc MySet.subset_def as "subset_def" in "Set"
+TheoremDoc MyGame.subset_def as "subset_def" in "Set"
 
-NewTheorem MySet.subset_def
--- **TODO** warning ``Add `LemmaDoc MySet.subset_def` somewhere above this statement.``
+NewTheorem MyGame.subset_def
+-- **TODO** warning ``Add `LemmaDoc MyGame.subset_def` somewhere above this statement.``
 -- suggests deprecated LemmaDoc
 
 /-- Every set $S$ is a subset of itself. -/
-TheoremDoc MySet.subset_refl as "subset_refl" in "Set"
+TheoremDoc MyGame.subset_refl as "subset_refl" in "Set"
 
 /-- Every set $S$ is a subset of itself. -/
 Statement subset_refl (S : Set 𝓧) : S ⊆ S := by

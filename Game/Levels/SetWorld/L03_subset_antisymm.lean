@@ -9,7 +9,7 @@ Introduction "The subset relation `⊆` is a *partial order*. This means that it
 transitive, and antisymmetric. In this level we learn two new tactics
 to prove that if `S ⊆ T` and `T ⊆ S` then `S = T`."
 
-namespace MySet
+namespace MyGame
 
 /--
 ## Summary
@@ -42,7 +42,7 @@ variable (𝓧 : Type)
 
 /-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$.
 -/
-TheoremDoc MySet.subset_antisymm as "subset_antisymm" in "Set"
+TheoremDoc MyGame.subset_antisymm as "subset_antisymm" in "Set"
 
 /-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$. -/
 Statement subset_antisymm (S T : Set 𝓧) (hST : S ⊆ T) (hTS : T ⊆ S) : S = T := by

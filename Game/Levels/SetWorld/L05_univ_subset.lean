@@ -8,17 +8,17 @@ Title "Nothing's bigger than the universal set"
 Introduction "See if you can use the tactics we've learnt to prove that if `univ ⊆ S`
 then `S = univ`."
 
-namespace MySet
+namespace MyGame
 
 /--
 `univ_subset` is the proof that `univ ⊆ S → S = univ`.
 -/
-TheoremDoc MySet.univ_subset as "univ_subset" in "Set"
+TheoremDoc MyGame.univ_subset as "univ_subset" in "Set"
 
 variable (𝓧 : Type)
 
 /-- Any set `S` satisfies `S ⊆ univ`. -/
-TheoremDoc MySet.univ_subset as "univ_subset" in "Set"
+TheoremDoc MyGame.univ_subset as "univ_subset" in "Set"
 
 /-- If $univ ⊆ S$ then $S = univ$. -/
 Statement univ_subset (S : Set 𝓧) : univ ⊆ S → S = univ := by

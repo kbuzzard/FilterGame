@@ -10,13 +10,13 @@ Introduction "In this level, we'll show the \"geometrically obvious\"
 fact that if `S`, `T` and `U` are sets, with `S ⊆ T`
 and `T ⊆ U`, then `S ⊆ U`."
 
-namespace MySet
+namespace MyGame
 
 variable {𝓧 : Type}
 
 /-- If $S ⊆ T$ and $T\subseteq U$ then $S\subseteq U$.
 -/
-TheoremDoc MySet.subset_trans as "subset_trans" in "Set"
+TheoremDoc MyGame.subset_trans as "subset_trans" in "Set"
 
 /-- If $S ⊆ T$ and $T\subseteq U$ then $S\subseteq U$. -/
 Statement subset_trans {S T U : Set 𝓧} (hST : S ⊆ T) (hTU : T ⊆ U) : S ⊆ U := by

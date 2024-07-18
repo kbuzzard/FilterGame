@@ -10,12 +10,12 @@ Introduction "The final level in this tutorial is one we'll need later, so we'd
 better prove it now. It's a simple criterion for proving `A ⊆ S ∩ T`, namely
 checking that `A ⊆ S` and `A ⊆ T`."
 
-namespace MySet
+namespace MyGame
 
 variable (𝓧 : Type)
 
 /-- If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`. -/
-TheoremDoc MySet.subset_inter as "subset_inter" in "Set"
+TheoremDoc MyGame.subset_inter as "subset_inter" in "Set"
 
 /-- `S ∩ T ⊆ S`. -/
 Statement subset_inter {A S T : Set 𝓧} (hAS : A ⊆ S) (hAT : A ⊆ T) :
@@ -25,7 +25,7 @@ Statement subset_inter {A S T : Set 𝓧} (hAS : A ⊆ S) (hAT : A ⊆ T) :
   use the `constructor` tactic to break into two goals `x ∈ S` and `x ∈ T`."
   rw [subset_def] at *
   intro x hx
-  rw [MySet.mem_inter_iff]
+  rw [mem_inter_iff]
   constructor
   · apply hAS
     exact hx

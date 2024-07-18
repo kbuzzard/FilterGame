@@ -19,12 +19,12 @@ TacticDoc tauto
 
 NewTactic tauto
 
-namespace MySet
+namespace MyGame
 
 variable (𝓧 : Type)
 
 /-- `S ∩ T ⊆ S`. -/
-TheoremDoc MySet.inter_subset_left as "inter_subset_left" in "Set"
+TheoremDoc MyGame.inter_subset_left as "inter_subset_left" in "Set"
 
 /-- `S ∩ T ⊆ S`. -/
 Statement inter_subset_left (S T : Set 𝓧) : S ∩ T ⊆ S := by

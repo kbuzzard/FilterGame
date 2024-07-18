@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 18 01:01:52 2024\n"
+"POT-Creation-Date: Thu Jul 18 01:26:54 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -569,6 +569,88 @@ msgid "In this tutorial level we'll learn about sets, subsets, and the intersect
 "this shouldn't cause any problems, but there is one notational difference. Lean uses the notation\n"
 "`x : 𝓧` to mean that `x` is an element of the base type `𝓧`, but for `S` a set, Lean uses\n"
 "the notation `x ∈ S` to mean that `x` is an element `S`.\n"
+"\n"
+"Click \"Start →\" to continue."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "The filter associated to a set."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "Like in Set World, we'll fix a \"base set\" `𝓧`, and all our\n"
+"sets will be subsets of `𝓧`.\n"
+"\n"
+"Let `A` be a subset of `𝓧`. Here's the key definition.\n"
+"\n"
+"Let `𝓟 A` denote the set of *all* the subsets of `𝓧` which contain `A`. In\n"
+"particular, `𝓟 A` is a *set of sets*. It's called `𝓟` because this\n"
+"is the *principal filter* associated to `A`.\n"
+"\n"
+"The name of the key fact you need to know about `𝓟 A`, namely\n"
+"`S ∈ 𝓟 A ↔ A ⊆ S`, is called `mem_principal`. This is true by definition.\n"
+"\n"
+"In the first three levels of this game, we'll prove three easy facts\n"
+"about `𝓟 A` using `mem_principal`. The first one is about the set\n"
+"`univ` whose elements are all of `𝓧`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "`mem_principal` is the proof that `S ∈ 𝓟 A ↔ A ⊆ S`. This is true\n"
+"because it's precisely the *definition* of `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "`univ` is an element of `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "Start with `rw [mem_principal]`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "Now `apply` a theorem we proved already to finish the job."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L01_univ_mem_principal
+msgid "Let's now prove two more basic facts about `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "Supersets and filters."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "In this level, we'll show that if `S ∈ 𝓟 A` then any\n"
+"bigger set `T ⊇ S` is also in `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "If `S ∈ 𝓟 A` and `S ⊆ T` then `T ∈ 𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "Start with `rw [mem_principal] at *` to remove all mention of `𝓟`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "Now you can finish with `exact subset_trans hAS hST`"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L02_mem_principal_of_superset
+msgid "Now let's show a fact about `𝓟 A` and intersections."
+msgstr ""
+
+#: Game.Levels.FilterWorld
+msgid "Filter World"
+msgstr ""
+
+#: Game.Levels.FilterWorld
+msgid "A filter on `𝓧` should be thought of as a *generalised subset*\n"
+"of `𝓧`.\n"
+"\n"
+"Every subset of `𝓧` gives you a filter on `𝓧`, and at the start of this world\n"
+"we're going to explain how this works.\n"
 "\n"
 "Click \"Start →\" to continue."
 msgstr ""
