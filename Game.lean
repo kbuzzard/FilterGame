@@ -37,7 +37,7 @@ theorem prover, and this game is written in Lean; you can see
 the source code to the game [here](https://github.com/kbuzzard/FilterGame)
 on GitHub, and even clone it yourself and add your own levels if you want.
 In this game I will assume you know the following basic Lean tactics:
-**TODO** fill these in. If you don't know these tactics, then you could
+`intro`, `apply`, `exact` and `rw`. If you don't know these tactics, then you could
 try playing a few worlds in the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4).
 If you've platyed through Tutorial World, Addition World and Implication World in that
 game, then you know enough about Lean to play the Filter Game.
@@ -58,7 +58,7 @@ I ever embarked on in 2021 was some Filter Game levels (I had to define
 a filter in Lean 4 as part of it!). I then supervised a second
 year group project on filters in 2023, and Billy Miao put together
 a preliminary version (in Lean 3) as part of the project. I thank
-Billy and the other group members **TODO** for their thoughts on
+Billy Miao, Lily Frost, Yichen Feng and Archie Prime for their thoughts on
 how things should be put together.
 
 What finally pushed this game into something which I felt was finally

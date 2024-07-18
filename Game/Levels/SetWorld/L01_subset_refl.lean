@@ -126,19 +126,13 @@ to close the goal.
 
 ### Example:
 
-**TODO** more appropriate examples.
+`mem_univ` is the theorem that `∀ x : X, x ∈ univ`. In other words, it is a *function*
+which takes as input an element of `X` and returns a proof that `x ∈ univ`.
 
-`succ_inj x y` is a proof that `succ x = succ y → x = y`.
+So if you have `a : X` and your goal is `a ∈ univ` then `exact mem_univ` will *not work*,
+because `mem_univ` has a "for all" in, and the goal does not. But `apply mem_univ`
+will work fine, as the `apply` tactic will figure out that you want to set `x = a`.
 
-So if you have a hypothesis `h : succ (a + 37) = succ (b + 42)`
-then `apply succ_inj at h` will change `h` to `a + 37 = b + 42`.
-You could write `apply succ_inj (a + 37) (b + 42) at h`
-but Lean is smart enough to figure out the inputs to `succ_inj`.
-
-### Example
-
-If the goal is `a * b = 7`, then `apply succ_inj` will turn the
-goal into `succ (a * b) = succ 7`.
 -/
 TacticDoc apply
 
@@ -159,16 +153,14 @@ of a mathematical result, not a *statement*.
 
 ### Exact needs to be exactly right
 
-**TODO** do `apply` example for `mem_univ` or whatever.
+`mem_univ` is the theorem that `∀ x : X, x ∈ univ`. In other words, it is a *function*
+which takes as input an element of `X` and returns a proof that `x ∈ univ`.
 
-Note that `exact add_zero` will *not work* in the previous example;
-for `exact h` to work, `h` has to be *exactly* a proof of the goal.
-`add_zero` is a proof of `∀ n, n + 0 = n` or, if you like,
-a proof of `? + 0 = ?` where `?` needs to be supplied by the user.
-This is in contrast to `rw` and `apply`, which will \"guess the inputs\"
-if necessary. If the goal is `x + 0 = x` then `rw [add_zero]`
-and `rw [add_zero x]` will both change the goal to `x = x`,
-because `rw` guesses the input to the function `add_zero`.
+So if you have `a : X` and your goal is `a ∈ univ` then `exact mem_univ` will *not work*,
+because `mem_univ` has a "for all" in, and the goal does not. You want
+to use `apply mem_univ` in this situation, as the `apply` tactic will figure out
+that you want to set `x = a`.
+
 -/
 TacticDoc exact
 
