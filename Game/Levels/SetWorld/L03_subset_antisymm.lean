@@ -53,13 +53,13 @@ Statement subset_antisymm (S T : Set 𝓧) (hST : S ⊆ T) (hTS : T ⊆ S) : S =
   Hint "We now have to prove an if and only if statement `P ↔ Q`, which is the same as proving
   `P → Q` and `Q → P`. Now use the `constructor` tactic to split the goal up into these two goals."
   constructor
-  Hint "This goal is going to follow from the fact that `S ⊆ T`. So let's `rw [subset_def] at hST`
-  to get it into a more useful form"
-  rw [subset_def] at hST
-  Hint "You've seen this kind of goal before in the previous level. See if you can take it from here."
-  apply hST
-  Hint "Now we have to go the other way. Here's a quick approach: try `apply hTS`."
-  apply hTS
+  · Hint "This goal is going to follow from the fact that `S ⊆ T`. So let's `rw [subset_def] at hST`
+    to get it into a more useful form"
+    rw [subset_def] at hST
+    Hint "You've seen this kind of goal before in the previous level. See if you can take it from here."
+    apply hST
+  · Hint "Now we have to go the other way. Here's a quick approach: try `apply hTS`."
+    apply hTS
 
 Conclusion "Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works
 is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which
