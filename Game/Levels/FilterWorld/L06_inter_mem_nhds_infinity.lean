@@ -1,3 +1,7 @@
+-- This level is WIP until
+-- I define the docstrings of a bunch more tactics
+-- and possibly write some new levels which explain how to use `max` and `min`
+
 import Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
 
 World "FilterWorld"
@@ -24,10 +28,11 @@ Statement {S T : Set ℕ} (hS : S ∈ 𝓝∞) (hT : T ∈ 𝓝∞) : S ∩ T �
   intro i hi
   rw [mem_inter_iff]
   constructor
-  · specialize hm i
+  ·
+    specialize hm i
     specialize hm ?_
     · trans max m n
-      · exact Nat.le_max_left m n -- does exact? work in NNG?
+      · exact Nat.le_max_left m n
       · exact hi
     · apply hm
   · specialize hn i ?_
