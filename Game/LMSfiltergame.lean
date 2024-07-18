@@ -11,9 +11,9 @@ variable (X : Type)
 
 --#check Set.subset_refl
 --#check Set.subset_rfl
-#check subset_rfl
-#check subset_refl
-#check Set.subset_def
+--#check subset_rfl
+--#check subset_refl
+--#check Set.subset_def
 
 namespace Set
 
@@ -53,7 +53,7 @@ lemma mem_univ' (x : X) : x ∈ univ := by
 lemma subset_univ' (S : Set X) : S ⊆ univ := by
   rw [Set.subset_def']
   intro x
-  intro hx
+  intro _hx
   apply mem_univ'
 
 -- tell them it's an axiom
@@ -181,7 +181,7 @@ lemma suff_large_univ_mem :
     univ ∈ {B : Set ℕ | ∃ N, ∀ i ≥ N, i ∈ B} := by
   rw [mem_setOf]
   use 37
-  intro i hi
+  intro i _hi
   apply mem_univ
 
 lemma suff_large_mem_of_superset (S T : Set ℕ)
@@ -251,7 +251,7 @@ lemma nhds_univ_mem :
   use 37
   constructor
   · norm_num
-  · intro y hy
+  · intro y _hy
     apply mem_univ
 
 lemma nhds_mem_of_superset (S T : Set ℝ)
@@ -361,9 +361,9 @@ variable (Z : Type) (g : Y → Z)
 lemma preimage_univ' : f ⁻¹' univ = univ := by
   ext x
   constructor
-  · intro h
+  · intro _h
     apply mem_univ
-  · intro h
+  · intro _h
     rw [mem_preimage]
     apply mem_univ
 
@@ -437,7 +437,7 @@ lemma comap_univ_mem : univ ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A} := by
   constructor
   · apply Filter.univ_mem
   · rw [subset_def]
-    intro x hx
+    intro x _hx
     apply mem_univ
 
 lemma comap_mem_of_superset (S T : Set X)
