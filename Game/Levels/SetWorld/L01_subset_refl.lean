@@ -203,7 +203,7 @@ Statement subset_refl (S : Set 𝓧) : S ⊆ S := by
   rw [subset_def]
   Hint "Now we've got to prove something for all `x`, so `intro x`."
   intro x
-  Hint "Now we assume `x ∈ S` with `intro h`"
+  Hint "Now we assume `x ∈ S` with `intro h`."
   intro h
   Hint "And now our goal is exactly `h`, so `exact h` or `apply h` will finish the level."
   apply h
