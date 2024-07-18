@@ -1,5 +1,5 @@
 import Game.Metadata
-import Mathlib.Data.Set.Basic
+import Mathlib.Tactic
 
 World "SetWorld"
 Level 1
