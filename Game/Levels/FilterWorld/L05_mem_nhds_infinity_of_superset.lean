@@ -35,7 +35,7 @@ Statement {S T : Set ℕ} (hS : S ∈ 𝓝∞) (hST : S ⊆ T) : T ∈ 𝓝∞ :
   Hint "I didn't write any more hints yet, but can you do it from here? Tell me where you get stuck
   and I'll put more hints in!"
   use D
-  intros i hi
+  intro i hi
   apply hST
   apply hD
   apply hi

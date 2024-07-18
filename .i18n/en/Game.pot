@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 18 13:14:29 2024\n"
+"POT-Creation-Date: Thu Jul 18 14:21:09 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -637,7 +637,7 @@ msgid "In this level, we'll show that if `S ∈ 𝓟 A` and `T ∈ 𝓟 A`\n"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L03_inter_mem_principal
-msgid "If `S ∈ 𝓟 A` and `S ⊆ T` then `T ∈ 𝓟 A`."
+msgid "If `S ∈ 𝓟 A` and `T ∈ 𝓟 A` then `S ∩ T ∈ 𝓟 A`."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L03_inter_mem_principal
@@ -703,6 +703,47 @@ msgstr ""
 
 #: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
 msgid "Let's now prove the other two filter axioms for `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "The superset axiom for `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "In this level, we'll show that if `S ∈ 𝓝∞` then any\n"
+"bigger set `T ⊇ S` is also in `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "## Summary\n"
+"\n"
+"If you have a *hypothesis* `h : ∃ N, blah blah blah` then the hypothesis says\n"
+"that *some* `N` exists with some property. But you don't *actually have* an `N`\n"
+"in your variables, just a promise that it exists.\n"
+"\n"
+"Get that `N` with `cases' h with N hN`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "If `S ∈ 𝓝∞` and `S ⊆ T` then `T ∈ 𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "Start with `rw [mem_ninf] at *` to remove all mention of `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "You now need to get to that `N` whose existence is guaranteed by `hS`. Do\n"
+"this with `cases' hS with D hD`"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "I didn't write any more hints yet, but can you do it from here? Tell me where you get stuck\n"
+"and I'll put more hints in!"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
+msgid "Just `𝓝∞` and intersections left!"
 msgstr ""
 
 #: Game.Levels.FilterWorld

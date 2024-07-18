@@ -264,7 +264,7 @@ lemma nhds_mem_of_superset (S T : Set ℝ)
   use ε
   constructor
   exact hε
-  intros y hy
+  intro y hy
   specialize hS y hy
   rw [Set.subset_def] at hST
   apply hST at hS
