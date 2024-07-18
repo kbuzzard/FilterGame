@@ -140,13 +140,14 @@ will *reduce* the goal of the level to some simpler goals.
 `mem_univ` is a *function*, which takes as input a term of type `𝓧` and
 returns a proof that `x ∈ univ`.
 
-So if you have `a : X` and your goal is to prove `a ∈ univ` then `exact mem_univ` will
+So if you have `a : X` and your goal is to prove `⊢ a ∈ univ` then `exact mem_univ` will
 *not work*, because `mem_univ` has a "for all" in, and the goal does not.
 But `apply mem_univ` will work fine, as the `apply` tactic will figure out that
 you want to set `x = a`.
 
-2) (`apply` solving a goal.) More generally if your goal is `(p + q)^2 ∈ univ` then `apply mem_univ`
-will just figure out that it needs to set `x = (p + q)^2` and just solve the goal.
+2) (`apply` changing a goal.) If your goal is `⊢ A ∪ B = univ` then `apply univ_subset`
+will change it to `univ ⊆ A ∪ B`, because `univ_subset` says that for all sets `S`,
+`univ ⊆ S` implies `S = univ`. The goal is now slightly logically easier.
 
 3) (`apply ... at` changing a hypothesis.) If you have `h : S ⊆ T` and you
 `rw [subset_def] at h`, you'll get `h : ∀ (x : 𝓧), x ∈ S → x ∈ T`. If you
@@ -162,7 +163,7 @@ the wiring and is not mathematics in the traditional sense. It turns out
 that `S ⊆ T` is *definitionally* equal to `∀ (x : 𝓧), x ∈ S → x ∈ T`, so
 actually if `h : S ⊆ T` then you can just `apply h` to change `⊢ 42 ∈ T` to
 `⊢ 42 ∈ S`. For another example, go back to set world level 1 and try `intro x`
-as your first move. The proof of `subset_def` is `Iff.rfl : P ↔ P`.
+as your first move. What's going on is that the proof of `subset_def` is `rfl`.
 
 -/
 TacticDoc apply

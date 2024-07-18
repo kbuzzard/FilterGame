@@ -17,15 +17,13 @@ TheoremTab "Set"
 -/
 TheoremDoc MyGame.univ_subset as "univ_subset" in "Set"
 
-variable (𝓧 : Type)
+variable {𝓧 : Type}
 
 /-- Any set `S` satisfies `S ⊆ univ`. -/
 TheoremDoc MyGame.univ_subset as "univ_subset" in "Set"
 
 /-- If $univ ⊆ S$ then $S = univ$. -/
-Statement univ_subset (S : Set 𝓧) : univ ⊆ S → S = univ := by
-  Hint (hidden := true) "Start with `intro h`."
-  intro h
+Statement univ_subset {S : Set 𝓧} (h : univ ⊆ S) : S = univ := by
   Hint (hidden := true) "Try `rw [subset_def] at h`."
   rw [subset_def] at h
   Hint (hidden := true) "Try `ext a`."
