@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 18 09:24:57 2024\n"
+"POT-Creation-Date: Thu Jul 18 09:55:55 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -650,6 +650,59 @@ msgstr ""
 
 #: Game.Levels.FilterWorld.L03_inter_mem_principal
 msgid "You just proved the three axioms of a filter."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "Infinitely big numbers."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "Let's see an example of a filter which isn't principal,\n"
+"the \"neighbourhoods of infinity\" filter `𝓝∞` on the natural numbers."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "`mem_ninf` is the proof that `S ∈ 𝓝∞ ↔ ∃ N, ∀ i, N ≤ i → i ∈ S`. This is\n"
+"true because it's precisely the *definition* of `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "## Summary\n"
+"\n"
+"If the goal is `∃ N, blah blah blah` then to prove such a statement, you\n"
+"have to show that some `N` exists which makes `blah blah blah` true.\n"
+"If you think `N = 37` works, then `use 37` will remove the `∃`\n"
+"and replace all `N`s in `blah blah blah` by 37.\n"
+"\n"
+"Note: `use` is a dangerous tactic. If you `use` the wrong number,\n"
+"you can turn a true goal into a false one.\n"
+"\n"
+"### Example\n"
+"\n"
+"If the goal is `∃ N, N + N = 4` then `use 2` will turn the\n"
+"goal into `2 + 2 = 4`, and `use 37` will turn the goal\n"
+"into `37 + 37 = 4`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "`univ` is an element of `𝓝∞`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "Start with `rw [mem_ninf]`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "To prove an \"exists\" goal we use the `use` tactic. Try `use 37`\n"
+"and Lean will replace `N` with `37`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "Can you take it from here?"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
+msgid "Let's now prove the other two filter axioms for `𝓝∞`."
 msgstr ""
 
 #: Game.Levels.FilterWorld
