@@ -14,7 +14,7 @@ variable {𝓧 : Type}
 
 TheoremTab "Filter"
 
-open Filter MyGame
+open Filter
 
 /-- If `S ∈ 𝓟 A` and `S ⊆ T` then `T ∈ 𝓟 A`. -/
 Statement {A S T : Set 𝓧} (hAS : S ∈ 𝓟 A) (hST : S ⊆ T) : T ∈ 𝓟 A := by
