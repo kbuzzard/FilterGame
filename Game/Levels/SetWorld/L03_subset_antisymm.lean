@@ -58,9 +58,8 @@ Statement subset_antisymm (S T : Set 𝓧) (hST : S ⊆ T) (hTS : T ⊆ S) : S =
     rw [subset_def] at hST
     Hint "You've seen this kind of goal before in the previous level. See if you can take it from here."
     apply hST
-  · Hint "Now we have to go the other way. Here's a quick approach: try `apply hTS`."
-    apply hTS
+  · apply hTS
 
-Conclusion "Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works
+Conclusion "Pro tip: you can solve `a ∈ T → a ∈ S` with one tactic `apply hTS`! The reason this works
 is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which
 applies for all `x`, and in particular it applies for `x = a`, which is the goal."
