@@ -40,14 +40,14 @@ TacticDoc ext
 NewTactic constructor ext
 
 
-variable (𝓧 : Type)
+variable {𝓧 : Type}
 
 /-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$.
 -/
 TheoremDoc MyGame.subset_antisymm as "subset_antisymm" in "Set"
 
 /-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$. -/
-Statement subset_antisymm (S T : Set 𝓧) (hST : S ⊆ T) (hTS : T ⊆ S) : S = T := by
+Statement subset_antisymm {S T : Set 𝓧} (hST : S ⊆ T) (hTS : T ⊆ S) : S = T := by
   Hint "We have to prove that two sets are equal. It's an axiom of mathematics
     (\"set extensionality\") that two sets are equal if they have the same elements.
     In Lean the `ext` tactic applies this axiom. Start with `ext a`."
