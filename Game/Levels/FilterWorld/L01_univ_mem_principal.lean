@@ -28,6 +28,8 @@ variable {𝓧 : Type}
 
 open Filter
 
+TheoremTab "Filter"
+
 lemma mem_principal {A S : Set 𝓧} : S ∈ 𝓟 A ↔ A ⊆ S := by rfl
 
 /--

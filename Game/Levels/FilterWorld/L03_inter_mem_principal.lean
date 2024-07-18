@@ -12,6 +12,8 @@ namespace MyGame
 
 variable {𝓧 : Type}
 
+TheoremTab "Filter"
+
 open Filter
 
 /-- If `S ∈ 𝓟 A` and `S ⊆ T` then `T ∈ 𝓟 A`. -/
