@@ -28,7 +28,7 @@ TheoremDoc MyGame.mem_univ as "mem_univ" in "Set"
 
 NewTheorem MyGame.mem_univ
 
-variable (𝓧 : Type)
+variable {𝓧 : Type}
 
 /-- Any set `S` satisfies `S ⊆ univ`. -/
 TheoremDoc MyGame.subset_univ as "subset_univ" in "Set"
