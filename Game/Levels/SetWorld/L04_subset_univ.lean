@@ -30,7 +30,9 @@ NewTheorem MyGame.mem_univ
 
 variable {𝓧 : Type}
 
-/-- Any set `S` satisfies `S ⊆ univ`. -/
+/-- Any set `S` satisfies `S ⊆ univ`.
+
+More formally, `subset_univ : ∀ (S : Set 𝓧), S ⊆ univ`.-/
 TheoremDoc MyGame.subset_univ as "subset_univ" in "Set"
 
 /-- $S ⊆ univ$. -/

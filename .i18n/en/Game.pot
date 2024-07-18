@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 18 22:17:30 2024\n"
+"POT-Creation-Date: Thu Jul 18 23:21:52 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -353,7 +353,9 @@ msgid "`mem_univ` is the proof of `∀ x, x ∈ univ`.\n"
 msgstr ""
 
 #: Game.Levels.SetWorld.L04_subset_univ
-msgid "Any set `S` satisfies `S ⊆ univ`."
+msgid "Any set `S` satisfies `S ⊆ univ`.\n"
+"\n"
+"More formally, `subset_univ : ∀ (S : Set 𝓧), S ⊆ univ`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L04_subset_univ
@@ -746,35 +748,6 @@ msgstr ""
 
 #: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
 msgid "Just `𝓝∞` and intersections left!"
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "Intersection axiom for `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "In this level, we'll show that if `S ∈ 𝓝∞` and `T ∈ 𝓝∞`\n"
-"then `S ∩ T ∈ 𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "If `S ∈ 𝓝∞` and `T ∈ 𝓝∞` then `S ∩ T ∈ 𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "Start with `rw [mem_ninf] at *` to remove all mention of `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "Now `cases' hS with m hm`"
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "Now `cases' hT with n hn`"
-msgstr ""
-
-#: Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
-msgid "You just proved the three axioms of a filter."
 msgstr ""
 
 #: Game.Levels.FilterWorld
