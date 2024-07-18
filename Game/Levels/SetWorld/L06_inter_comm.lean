@@ -46,7 +46,9 @@ TheoremDoc MyGame.inter_comm as "inter_comm" in "Set"
 Statement inter_comm (S T : Set 𝓧) : S ∩ T = T ∩ S := by
   Hint "Start with `ext a`."
   ext a
-  Hint "Now `rw [mem_inter_iff]`"
+  Hint "We are trying to get this goal into a form where the `tauto` tactic
+  will solve it. Click on the `tauto` tactic on the right to see what
+  it does. Then try `rw [mem_inter_iff]`"
   rw [mem_inter_iff]
   Hint "Now do it again, and the goal will be purely a logic goal."
   rw [mem_inter_iff]
