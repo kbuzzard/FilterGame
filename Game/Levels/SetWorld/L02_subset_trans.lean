@@ -19,7 +19,7 @@ variable (𝓧 : Type)
 TheoremDoc MySet.subset_trans as "subset_trans" in "Set"
 
 /-- If $S ⊆ T$ and $T\subseteq U$ then $S\subseteq U$. -/
-Statement subset_trans (S T U : Set 𝓧) (hST : S ⊆ T) (hTU : T ⊆ U) : S ⊆ U := by
+Statement subset_trans {S T U : Set 𝓧} (hST : S ⊆ T) (hTU : T ⊆ U) : S ⊆ U := by
   Hint "Start with `rw [subset_def] at *` to replace all occurences of the `⊆` symbol with
     their definitions."
   rw [subset_def] at *
