@@ -32,7 +32,7 @@ TacticDoc constructor
 /--
 ## Summary
 
-If the goal is the equaality of two sets `S = T`, then `ext a` introduces a new variable `a`
+If the goal is the equality of two sets `S = T`, then `ext a` introduces a new variable `a`
 and turns the goal into `a ∈ S ↔ a ∈ T`.
 -/
 TacticDoc ext
