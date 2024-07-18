@@ -170,9 +170,6 @@ filter, namely the principal filter.
 
 -/
 
-open scoped Filter in
-#check 𝓟 A
-
 end principal
 
 section suff_large
@@ -217,7 +214,7 @@ lemma suff_large_inter_mem (S T : Set ℕ)
   · specialize hM i ?_
     · trans max M N
       · exact hi
-      · exact?
+      · exact Nat.le_max_left M N
     · exact hM
 
 -- theorem: this is not principal.
