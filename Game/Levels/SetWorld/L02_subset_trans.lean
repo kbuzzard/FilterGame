@@ -12,7 +12,7 @@ and `T ⊆ U`, then `S ⊆ U`."
 
 namespace MySet
 
-variable (𝓧 : Type)
+variable {𝓧 : Type}
 
 /-- If $S ⊆ T$ and $T\subseteq U$ then $S\subseteq U$.
 -/

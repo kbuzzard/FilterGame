@@ -19,6 +19,6 @@ Statement {A S T : Set 𝓧} (hAS : S ∈ 𝓟 A) (hST : S ⊆ T) : T ∈ 𝓟 A
   Hint "Start with `rw [mem_principal] at *` to remove all mention of `𝓟`."
   rw [mem_principal] at *
   Hint "Now you can finish with `exact subset_trans hAS hST`"
-  exact subset_trans hAS hST
+  exact MySet.subset_trans hAS hST
 
 Conclusion "Now let's show a fact about `𝓟 A` and intersections."
