@@ -12,6 +12,8 @@ checking that `A ⊆ S` and `A ⊆ T`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 variable (𝓧 : Type)
 
 /-- If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`. -/

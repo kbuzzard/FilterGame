@@ -12,6 +12,8 @@ and `T ⊆ U`, then `S ⊆ U`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 variable {𝓧 : Type}
 
 /-- If $S ⊆ T$ and $T\subseteq U$ then $S\subseteq U$.

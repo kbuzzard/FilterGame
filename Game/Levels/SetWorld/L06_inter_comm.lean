@@ -24,6 +24,8 @@ NewTactic tauto
 
 namespace MyGame
 
+TheoremTab "Set"
+
 lemma mem_inter_iff {𝓧 : Type} (x : 𝓧) (S T : Set 𝓧) : x ∈ S ∩ T ↔ x ∈ S ∧ x ∈ T := by rfl
 
 /--

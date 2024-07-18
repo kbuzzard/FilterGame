@@ -10,6 +10,8 @@ then `S = univ`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 /--
 `univ_subset` is the proof that `univ ⊆ S → S = univ`.
 -/

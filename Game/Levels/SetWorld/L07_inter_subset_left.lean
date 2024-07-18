@@ -21,6 +21,8 @@ NewTactic tauto
 
 namespace MyGame
 
+TheoremTab "Set"
+
 variable (𝓧 : Type)
 
 /-- `S ∩ T ⊆ S`. -/

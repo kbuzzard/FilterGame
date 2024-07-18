@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 18 07:40:45 2024\n"
+"POT-Creation-Date: Thu Jul 18 08:58:10 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -339,11 +339,7 @@ msgid "You've seen this kind of goal before in the previous level. See if you ca
 msgstr ""
 
 #: Game.Levels.SetWorld.L03_subset_antisymm
-msgid "Now we have to go the other way. Here's a quick approach: try `apply hTS`."
-msgstr ""
-
-#: Game.Levels.SetWorld.L03_subset_antisymm
-msgid "Did you solve `a ∈ T → a ∈ S` with one tactic `apply hTS`? The reason this works\n"
+msgid "Pro tip: you can solve `a ∈ T → a ∈ S` with one tactic `apply hTS`! The reason this works\n"
 "is that `T ⊆ S` is equal to `∀ x, x ∈ T → x ∈ S` *by definition*, so it is a theorem which\n"
 "applies for all `x`, and in particular it applies for `x = a`, which is the goal."
 msgstr ""
@@ -371,7 +367,7 @@ msgid "Any set `S` satisfies `S ⊆ univ`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L04_subset_univ
-msgid "If $S ⊆ T$ and $T\\subseteq S$ then $S = T$."
+msgid "$S ⊆ univ$."
 msgstr ""
 
 #: Game.Levels.SetWorld.L04_subset_univ

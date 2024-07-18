@@ -12,6 +12,8 @@ when faced with the goal `x ∈ univ`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 def univ := @Set.univ
 
 lemma mem_univ {𝓧 : Type} (x : 𝓧) : x ∈ univ := by trivial
@@ -31,7 +33,7 @@ variable (𝓧 : Type)
 /-- Any set `S` satisfies `S ⊆ univ`. -/
 TheoremDoc MyGame.subset_univ as "subset_univ" in "Set"
 
-/-- If $S ⊆ T$ and $T\subseteq S$ then $S = T$. -/
+/-- $S ⊆ univ$. -/
 Statement subset_univ (S : Set 𝓧) : S ⊆ univ := by
   Hint "Try and the turn the goal into `x ∈ univ` and then `apply mem_univ`."
   rw [subset_def]

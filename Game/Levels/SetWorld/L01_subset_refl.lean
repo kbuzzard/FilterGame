@@ -12,6 +12,8 @@ a proof that `S ⊆ S`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 variable (𝓧 : Type)
 
 /--

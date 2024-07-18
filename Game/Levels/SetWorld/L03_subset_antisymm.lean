@@ -11,6 +11,8 @@ to prove that if `S ⊆ T` and `T ⊆ S` then `S = T`."
 
 namespace MyGame
 
+TheoremTab "Set"
+
 /--
 ## Summary
 
