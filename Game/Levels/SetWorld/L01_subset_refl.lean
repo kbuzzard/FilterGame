@@ -113,25 +113,56 @@ TacticDoc intro
 /--
 ## Summary
 
-This tactic has two distinct uses.
+This tactic has two distinct uses, with two distinct syntaxes:
+
+1) `apply <hypothesis or proof> at <hypothesis>`.
+2) `apply <hypothesis or proof>`.
+
+Usage 1) with the `at` is *arguing forwards*. Usage 2 is *arguing backwards*.
+
+Note: `apply h` or `apply h at something` will *only work* if `h` is
+a *function*, for example an *implication* `h : P → Q`.
+
+### More explanation
 
 1) If `t : P → Q` is a proof that $P \implies Q$, and `h : P` is a proof of `P`,
 then `apply t at h` will change `h` to a proof of `Q`. The idea is that if
 you know `P` is true, then you can deduce from `t` that `Q` is true.
 
-2) If your goal is a special case of a theorem `P` (for example perhaps `P` says
-"for all `x`, ..." and your goal has a specific example of an `x`),
-then `apply P` will attempt to figure out all the variable substitutions necessary
-to close the goal.
+2) If your goal is the possible conclusion of a theorem (which might have some
+hypotheses), and if `h` is a *proof* of the theorem, then `apply h` will
+apply the theorem to the goal. Sometimes it will prove it, and sometimes it
+will *reduce* the goal of the level to some simpler goals.
 
-### Example:
+### Examples:
 
-`mem_univ` is the theorem that `∀ x : X, x ∈ univ`. In other words, it is a *function*
-which takes as input an element of `X` and returns a proof that `x ∈ univ`.
+1) (`apply` solving a goal.) `mem_univ` is the proof of the theorem `∀ x : 𝓧, x ∈ univ`. In other words,
+`mem_univ` is a *function*, which takes as input a term of type `𝓧` and
+returns a proof that `x ∈ univ`.
 
-So if you have `a : X` and your goal is `a ∈ univ` then `exact mem_univ` will *not work*,
-because `mem_univ` has a "for all" in, and the goal does not. But `apply mem_univ`
-will work fine, as the `apply` tactic will figure out that you want to set `x = a`.
+So if you have `a : X` and your goal is to prove `a ∈ univ` then `exact mem_univ` will
+*not work*, because `mem_univ` has a "for all" in, and the goal does not.
+But `apply mem_univ` will work fine, as the `apply` tactic will figure out that
+you want to set `x = a`.
+
+2) (`apply` solving a goal.) More generally if your goal is `(p + q)^2 ∈ univ` then `apply mem_univ`
+will just figure out that it needs to set `x = (p + q)^2` and just solve the goal.
+
+3) (`apply ... at` changing a hypothesis.) If you have `h : S ⊆ T` and you
+`rw [subset_def] at h`, you'll get `h : ∀ (x : 𝓧), x ∈ S → x ∈ T`. If you
+have a second hypothesis `haS : a ∈ S` then `apply h at haS` will turn `haS`
+into a now poorly-named proof of `a ∈ T`.
+
+Similarly if `h₁ : log 37 ∈ S` then `apply h at h₁` will give you `h₁ : log 37 ∈ T`.
+
+### Bonus fact if you got to the end
+
+There's something in type theory called "definitional equality" which is part of
+the wiring and is not mathematics in the traditional sense. It turns out
+that `S ⊆ T` is *definitionally* equal to `∀ (x : 𝓧), x ∈ S → x ∈ T`, so
+actually if `h : S ⊆ T` then you can just `apply h` to change `⊢ 42 ∈ T` to
+`⊢ 42 ∈ S`. For another example, go back to set world level 1 and try `intro x`
+as your first move. The proof of `subset_def` is `Iff.rfl : P ↔ P`.
 
 -/
 TacticDoc apply
