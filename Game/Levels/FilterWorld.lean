@@ -1,4 +1,5 @@
 import Game.Levels.FilterWorld.L01_univ_mem_principal
+import Game.Levels.FilterWorld.L02_mem_principal_of_superset
 
 World "FilterWorld"
 Title "Filter World"

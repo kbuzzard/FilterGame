@@ -1,4 +1,5 @@
 import Game.Levels.SetWorld
+import Game.Levels.FilterWorld
 
 -- Here's what we'll put on the title screen
 Title "The Filter Game"
