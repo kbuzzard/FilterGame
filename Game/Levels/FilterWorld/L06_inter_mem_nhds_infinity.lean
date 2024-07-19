@@ -20,25 +20,25 @@ open Filter
 Statement {S T : Set ℕ} (hS : S ∈ 𝓝∞) (hT : T ∈ 𝓝∞) : S ∩ T ∈ 𝓝∞ := by
   Hint "Start with `rw [mem_ninf] at *` to remove all mention of `𝓝∞`."
   rw [mem_ninf] at *
-  Hint "Now `cases' hS with m hm`"
-  cases' hS with m hm
-  Hint "Now `cases' hT with n hn`"
-  cases' hT with n hn
-  use max m n
+  Hint "Now `cases' hS with a ha`"
+  cases' hS with a ha
+  Hint "Now `cases' hT with b hb`"
+  cases' hT with b hb
+  use max a b
   intro i hi
   rw [mem_inter_iff]
   constructor
   ·
-    specialize hm i
-    specialize hm ?_
-    · trans max m n
-      · exact Nat.le_max_left m n
+    specialize ha i
+    specialize ha ?_
+    · trans max a b
+      · exact Nat.le_max_left a b
       · exact hi
-    · apply hm
-  · specialize hn i ?_
-    · trans max m n
-      · exact Nat.le_max_right m n
+    · apply ha
+  · specialize hb i ?_
+    · trans max a b
+      · exact Nat.le_max_right a b
       · exact hi
-    · exact hn
+    · exact hb
 
 Conclusion "You just proved the three axioms of a filter."
