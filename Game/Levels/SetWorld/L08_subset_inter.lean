@@ -19,7 +19,7 @@ variable (𝓧 : Type)
 /-- If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`. -/
 TheoremDoc MyGame.subset_inter as "subset_inter" in "Set"
 
-/-- `S ∩ T ⊆ S`. -/
+/-- If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`. -/
 Statement subset_inter {A S T : Set 𝓧} (hAS : A ⊆ S) (hAT : A ⊆ T) :
   A ⊆ S ∩ T := by
   Hint "I would start with `rw [subset_def] at *`. If you find yourself
