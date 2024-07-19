@@ -1,3 +1,4 @@
+import Game.Levels.TacticWorld
 import Game.Levels.SetWorld
 import Game.Levels.FilterWorld
 

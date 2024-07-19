@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Jul 19 00:05:56 2024\n"
+"POT-Creation-Date: Fri Jul 19 08:46:47 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -18,6 +18,67 @@ msgstr ""
 
 #: GameServer.RpcHandlers
 msgid "intermediate goal solved! 🎉"
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "The `symm` tactic."
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "The `symm` tactic is easy to use and understand.\n"
+"It changes goals of the form `⊢ X = Y` to `⊢ Y = X`. Here `X`\n"
+"and `Y` can be numbers or sets or filters or anything.\n"
+"\n"
+"It also changes goals of the form `⊢ P ↔ Q` to `⊢ Q ↔ P`. You can\n"
+"also make it work on hypotheses (for example `h : X = Y`), with `symm at h`.\n"
+"\n"
+"Why don't you try a simple example."
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "If $x$ and $y$ are real numbers and $x = y$, then $y = x$."
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "You can finish this using `rw`. But can you find a `rw`-free proof using `symm` and `exact`?\n"
+"Try using `symm` on either the goal or `h`."
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "Nice! You've now unlocked the `symm` tactic."
+msgstr ""
+
+#: Game.Levels.TacticWorld.L01_symm
+msgid "## Summary\n"
+"\n"
+"The `symm` tactic turns goals of the form `⊢ X = Y` to `⊢ Y = X`,\n"
+"and goals of the form `⊢ P ↔ Q` to `⊢ Q ↔ P`. You can use `symm at h`\n"
+"to make it work on hypotheses `h : X = Y` too.\n"
+"\n"
+"### Example\n"
+"\n"
+"If the goal is `⊢ 2 + 2 = 4` and you try `symm`, the goal\n"
+"will become `⊢ 4 = 2 + 2`.\n"
+"\n"
+"### Example\n"
+"\n"
+"If `h : S ⊆ T ↔ ∀ x, x ∈ S → x ∈ T` then `symm at h` will change `h`\n"
+"into `(∀ x, x ∈ S → X ∈ T) ↔ S ⊆ T`."
+msgstr ""
+
+#: Game.Levels.TacticWorld
+msgid "Tactic World"
+msgstr ""
+
+#: Game.Levels.TacticWorld
+msgid "Lean has lots of tactics, and sometimes students learn about tactics which\n"
+"they want to learn in the Filter Game but *can't use* because they\n"
+"haven't been introduced yet.\n"
+"\n"
+"In Tactic World we have levels which introduce new tactics. The more\n"
+"you do, the more \"power\" you will have available to you.\n"
+"\n"
+"Click \"Start →\" to continue."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
@@ -151,13 +212,14 @@ msgid "## Summary\n"
 "`mem_univ` is a *function*, which takes as input a term of type `𝓧` and\n"
 "returns a proof that `x ∈ univ`.\n"
 "\n"
-"So if you have `a : X` and your goal is to prove `a ∈ univ` then `exact mem_univ` will\n"
+"So if you have `a : X` and your goal is to prove `⊢ a ∈ univ` then `exact mem_univ` will\n"
 "*not work*, because `mem_univ` has a \"for all\" in, and the goal does not.\n"
 "But `apply mem_univ` will work fine, as the `apply` tactic will figure out that\n"
 "you want to set `x = a`.\n"
 "\n"
-"2) (`apply` solving a goal.) More generally if your goal is `(p + q)^2 ∈ univ` then `apply mem_univ`\n"
-"will just figure out that it needs to set `x = (p + q)^2` and just solve the goal.\n"
+"2) (`apply` changing a goal.) If your goal is `⊢ A ∪ B = univ` then `apply univ_subset`\n"
+"will change it to `univ ⊆ A ∪ B`, because `univ_subset` says that for all sets `S`,\n"
+"`univ ⊆ S` implies `S = univ`. The goal is now slightly logically easier.\n"
 "\n"
 "3) (`apply ... at` changing a hypothesis.) If you have `h : S ⊆ T` and you\n"
 "`rw [subset_def] at h`, you'll get `h : ∀ (x : 𝓧), x ∈ S → x ∈ T`. If you\n"
@@ -173,7 +235,7 @@ msgid "## Summary\n"
 "that `S ⊆ T` is *definitionally* equal to `∀ (x : 𝓧), x ∈ S → x ∈ T`, so\n"
 "actually if `h : S ⊆ T` then you can just `apply h` to change `⊢ 42 ∈ T` to\n"
 "`⊢ 42 ∈ S`. For another example, go back to set world level 1 and try `intro x`\n"
-"as your first move. The proof of `subset_def` is `Iff.rfl : P ↔ P`."
+"as your first move. What's going on is that the proof of `subset_def` is `rfl`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L01_subset_refl
@@ -416,10 +478,6 @@ msgstr ""
 
 #: Game.Levels.SetWorld.L05_univ_subset
 msgid "If $univ ⊆ S$ then $S = univ$."
-msgstr ""
-
-#: Game.Levels.SetWorld.L05_univ_subset
-msgid "Start with `intro h`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L05_univ_subset
