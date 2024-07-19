@@ -28,6 +28,19 @@ lemma le_add_self {a b : ℕ} : a ≤ b + a := by
   rw [Nat.add_comm]
   apply le_self_add
 
+
+/--
+`le_self_add` is a proof that `a ≤ a + b` for all natural numbers
+`a` and `b`.
+-/
+TheoremDoc MyGame.le_self_add as "le_self_add" in "Nat"
+
+/--
+`le_add_self` is similar to `le_self_add` but for `a ≤ b + a`.
+-/
+TheoremDoc MyGame.le_add_self as "le_add_self" in "Nat"
+NewTheorem MyGame.le_self_add MyGame.le_add_self
+
 /-- If `S ∈ 𝓝∞` and `T ∈ 𝓝∞` then `S ∩ T ∈ 𝓝∞`. -/
 Statement {S T : Set ℕ} (hS : S ∈ 𝓝∞) (hT : T ∈ 𝓝∞) : S ∩ T ∈ 𝓝∞ := by
   Hint "Start with `rw [mem_ninf] at *` to remove all mention of `𝓝∞`."
@@ -42,9 +55,11 @@ Statement {S T : Set ℕ} (hS : S ∈ 𝓝∞) (hT : T ∈ 𝓝∞) : S ∩ T �
   rw [mem_inter_iff]
   constructor
   · apply ha
+    Hint "Uses `have aq : a ≤ a + b := le_self_add`."
     have aq : a ≤ a + b := le_self_add
     exact Nat.le_trans aq h
   · apply hb
+    Hint "Uses `have bq : b ≤ a + b := le_add_self`."
     have bq : b ≤ a + b := le_add_self
     exact Nat.le_trans bq h
   -- -- Original proof
