@@ -14,7 +14,7 @@ namespace MyGame
 
 TheoremTab "Set"
 
-variable (𝓧 : Type)
+variable {𝓧 : Type}
 
 /-- If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`. -/
 TheoremDoc MyGame.subset_inter as "subset_inter" in "Set"
