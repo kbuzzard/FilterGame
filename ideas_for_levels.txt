@@ -1,0 +1,11 @@
+Partial order and total order are very boring and don't deserve worlds
+
+maybe aesop or tauto can solve goals in partial and total orders
+
+1) Set world (fine as it is)
+2) Filter intro world (one example, kernels)
+3) function world (pushforward and pullback of sets)
+4) pushforward and pullback on filters
+5) Order on filters (tendsto.comp)
+
+6) Second and third examples: needs max and min
