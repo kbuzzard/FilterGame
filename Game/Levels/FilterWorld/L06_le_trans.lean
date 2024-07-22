@@ -25,4 +25,4 @@ Statement le_trans {𝓕 𝓖 𝓗 : Filter 𝓧} (h1 : 𝓕 ≤ 𝓖) (h2 : �
   rw [le_def] at *
   sorry
 
-Conclusion "Let's finish with `antisymm`, the final axiom for a partial order."
+Conclusion "Next let's prove antisymmetry."

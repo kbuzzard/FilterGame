@@ -4,6 +4,7 @@ import Game.Levels.FilterWorld.L03_inter_mem_principal
 import Game.Levels.FilterWorld.L04_mem_principal_self
 import Game.Levels.FilterWorld.L05_le_refl
 import Game.Levels.FilterWorld.L06_le_trans
+import Game.Levels.FilterWorld.L07_le_antisymm
 
 World "FilterWorld"
 Title "First example of a filter"

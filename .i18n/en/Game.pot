@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 20:36:09 2024\n"
+"POT-Creation-Date: Mon Jul 22 20:49:02 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -832,7 +832,33 @@ msgid "Start with `rw [le_def] at *`"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L06_le_trans
-msgid "Let's finish with `antisymm`, the final axiom for a partial order."
+msgid "Next let's prove antisymmetry."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Antisymmetry of ≤"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Let's prove `≤` on filters is antisymmetric."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "This is the theorem about filters that if `𝓕 ≤ 𝓖` and `𝓖 ≤ 𝓕` then `𝓕 = 𝓖`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "If `𝓕 ≤ 𝓖` and `𝓖 ≤ 𝓕` then `𝓕 = 𝓖`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Two filters are equal if and only if they are the same collection of sets.\n"
+"This is an extensionality principle (two things are the same if they're made up of\n"
+"the same stuff). So start with `ext S`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Next let's relate `≤` to principal filters."
 msgstr ""
 
 #: Game.Levels.FilterWorld
