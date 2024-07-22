@@ -311,7 +311,7 @@ lemma le_principal (A : Set 𝓧) (𝓕 : Filter 𝓧) : 𝓕 ≤ 𝓟 A ↔ A �
     tauto
 
 -- corollary
-lemma principal_le_principal_iff (A B : Set 𝓧) :
+lemma principal_mono' (A B : Set 𝓧) :
     𝓟 A ≤ 𝓟 B ↔ A ⊆ B := by
   rw [le_principal]
   rw [mem_principal]

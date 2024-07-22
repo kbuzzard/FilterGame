@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 20:51:09 2024\n"
+"POT-Creation-Date: Mon Jul 22 20:58:25 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -879,6 +879,28 @@ msgstr ""
 
 #: Game.Levels.FilterWorld.L08_le_principal
 msgid "Let's now deduce that `≤` on principal filters agrees with `⊆` on sets."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L09_principal_mono
+msgid "Principal filters and `≤`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L09_principal_mono
+msgid "Let's prove that `≤` on filters \"extends\" `⊆` on sets. In other words,\n"
+"our definition of `≤` for generalized sets agrees with the usual notion of `⊆` on sets."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L09_principal_mono
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L09_principal_mono
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L09_principal_mono
+msgid "Congratulations you've finished the first filter world! If you've already\n"
+"done function world then you can go on to pushing and pulling filters."
 msgstr ""
 
 #: Game.Levels.FilterWorld
