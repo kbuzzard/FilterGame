@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Jul 19 08:46:47 2024\n"
+"POT-Creation-Date: Mon Jul 22 12:36:17 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -618,7 +618,7 @@ msgid "If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L08_subset_inter
-msgid "`S ∩ T ⊆ S`."
+msgid "If `A ⊆ S` and `A ⊆ T` then `A ⊆ S ∩ T`."
 msgstr ""
 
 #: Game.Levels.SetWorld.L08_subset_inter
