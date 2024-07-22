@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 20:58:25 2024\n"
+"POT-Creation-Date: Mon Jul 22 21:15:36 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -899,7 +899,29 @@ msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`
 msgstr ""
 
 #: Game.Levels.FilterWorld.L09_principal_mono
-msgid "Congratulations you've finished the first filter world! If you've already\n"
+msgid "The final thing we'll do this in world is to prove that if `𝓟 A = 𝓟 B` then `A = B`.\n"
+"In other words, we'll show that two distinct sets give us distinct filters."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
+msgid "`principal_inj`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
+msgid "Let's prove that `≤` on filters \"extends\" `⊆` on sets. In other words,\n"
+"our definition of `≤` for generalized sets agrees with the usual notion of `⊆` on sets."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A = 𝓟 B ↔ A = B`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
+msgid "Congratulations, you've finished the first filter world! If you've already\n"
 "done function world then you can go on to pushing and pulling filters."
 msgstr ""
 

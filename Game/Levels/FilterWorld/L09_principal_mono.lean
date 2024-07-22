@@ -27,5 +27,5 @@ Statement principal_mono {A B : Set 𝓧} : 𝓟 A ≤ 𝓟 B ↔ A ⊆ B := by
   -- why does tauto work but not solve by elim. Can we *teach* solve_by_elim?
   tauto
 
-Conclusion "Congratulations you've finished the first filter world! If you've already
-done function world then you can go on to pushing and pulling filters."
+Conclusion "The final thing we'll do this in world is to prove that if `𝓟 A = 𝓟 B` then `A = B`.
+In other words, we'll show that two distinct sets give us distinct filters."
