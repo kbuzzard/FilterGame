@@ -567,9 +567,7 @@ variable {𝓩 : Type} (ψ : 𝓨 → 𝓩)
 lemma Tendsto.comp' (𝓖 : Filter 𝓨) (𝓗 : Filter 𝓩) (h1 : 𝓕.Tendsto φ 𝓖) (h2 : 𝓖.Tendsto ψ 𝓗) : 𝓕.Tendsto (ψ ∘ φ) 𝓗 := by
   rw [tendsto_def'] at *
   trans map ψ 𝓖
-
-  apply map_mono
-
-
   sorry
+  sorry
+
 end map
