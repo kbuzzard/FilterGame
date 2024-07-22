@@ -3,7 +3,7 @@ import Game.Levels.FilterWorld.L09_principal_mono
 World "FilterWorld"
 Level 10
 
-Title "`principal_inj`."
+Title "`principal_eq_iff_eq`."
 
 Introduction "Let's prove that `≤` on filters \"extends\" `⊆` on sets. In other words,
 our definition of `≤` for generalized sets agrees with the usual notion of `⊆` on sets."
