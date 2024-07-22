@@ -3,7 +3,11 @@ import Game.Levels.FilterWorld.L02_mem_principal_of_superset
 import Game.Levels.FilterWorld.L03_inter_mem_principal
 import Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
 import Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
--- WIP: import Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
+import Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
+import Game.Levels.FilterWorld.L07_principal_le
+import Game.Levels.FilterWorld.L08_principal_eq
+import Game.Levels.FilterWorld.L09_infinite_inter_filter
+import Game.Levels.FilterWorld.L10_inter_principal
 
 World "FilterWorld"
 Title "First example of a filter"

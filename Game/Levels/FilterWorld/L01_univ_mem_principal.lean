@@ -38,7 +38,15 @@ because it's precisely the *definition* of `𝓟 A`.
 -/
 TheoremDoc MyGame.mem_principal as "mem_principal" in "Filter"
 
-NewTheorem MyGame.mem_principal
+lemma univ_mem_principal {A : Set 𝓧} : A ∈ 𝓟 A := by rw [mem_principal]
+
+/--
+`univ_mem_principal` is the proof that `A` is an element of `𝓟 A`.
+-/
+TheoremDoc MyGame.univ_mem_principal as "univ_mem_principal" in "Filter"
+
+NewTheorem MyGame.mem_principal MyGame.univ_mem_principal
+
 
 /-- `univ` is an element of `𝓟 A`. -/
 Statement (A : Set 𝓧) : univ ∈ 𝓟 A := by
