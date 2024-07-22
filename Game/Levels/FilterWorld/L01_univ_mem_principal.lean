@@ -9,14 +9,13 @@ Title "The filter associated to a set."
 Introduction "Like in Set World, we'll fix a \"base set\" `𝓧`, and all our
 sets will be subsets of `𝓧`.
 
-Let `A` be a subset of `𝓧`. Here's the key definition.
+Before I give you the *definition* of a filter, I will give you an *example*.
 
-Let `𝓟 A` denote the set of *all* the subsets of `𝓧` which contain `A`. In
-particular, `𝓟 A` is a *set of sets*. It's called `𝓟` because this
-is the *principal filter* associated to `A`.
+Let `A` be a subset of `𝓧`. We are going to define the *principal filter*
+associated to `A`. It is a *set of subsets* of `𝓧`, called `𝓟 A`.
+A subset `S` is in `𝓟 A` if and only if `A ⊆ S`.
 
-The name of the key fact you need to know about `𝓟 A`, namely
-`S ∈ 𝓟 A ↔ A ⊆ S`, is called `mem_principal`. This is true by definition.
+The name of this key fact `S ∈ 𝓟 A ↔ A ⊆ S` is `mem_principal`.
 
 In the first three levels of this game, we'll prove three easy facts
 about `𝓟 A` using `mem_principal`. The first one is about the set
