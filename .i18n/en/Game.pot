@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 12:36:17 2024\n"
+"POT-Creation-Date: Mon Jul 22 18:21:49 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -840,14 +840,14 @@ msgid "Just `𝓝∞` and intersections left!"
 msgstr ""
 
 #: Game.Levels.FilterWorld
-msgid "Filter World"
+msgid "First example of a filter"
 msgstr ""
 
 #: Game.Levels.FilterWorld
 msgid "A filter on `𝓧` should be thought of as a *generalised subset*\n"
 "of `𝓧`.\n"
 "\n"
-"Every subset of `𝓧` gives you a filter on `𝓧`, and at the start of this world\n"
+"Every subset of `𝓧` gives you a filter on `𝓧`, and in this world\n"
 "we're going to explain how this works.\n"
 "\n"
 "Click \"Start →\" to continue."
