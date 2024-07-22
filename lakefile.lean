@@ -45,12 +45,21 @@ package Game where
   moreLeanArgs := #[
     "-Dtactic.hygienic=false",
     "-Dlinter.unusedVariables.funArgs=false",
-    "-Dtrace.debug=false"]
+    "-Dtrace.debug=false",
+    "-Dpp.unicode.fun=true", -- pretty-prints `fun a ↦ b`
+    "-DautoImplicit=false", -- switch off auto-implicit
+    "-DrelaxedAutoImplicit=false"] -- switch off relaxed auto-implicit
   moreServerOptions := #[
     ⟨`tactic.hygienic, false⟩,
     ⟨`linter.unusedVariables.funArgs, true⟩,
     ⟨`trace.debug, true⟩]
   weakLeanArgs := #[]
+
+  leanOptions := #[
+    ⟨`pp.unicode.fun, true⟩, -- pretty-prints `fun a ↦ b`
+    ⟨`autoImplicit, false⟩, -- switch off auto-implicit
+    ⟨`relaxedAutoImplicit, false⟩ -- switch off relaxed auto-implicit
+  ]
 
 @[default_target]
 lean_lib Game
