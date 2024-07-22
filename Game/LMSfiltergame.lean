@@ -285,6 +285,11 @@ end nhds
 
 namespace Filter
 
+/-
+
+# This is filter world
+
+-/
 variable (𝓧 : Type)
 
 section order
@@ -380,11 +385,11 @@ lemma subset_preimage_image' (S : Set 𝓧) : S ⊆ φ ⁻¹' (φ '' S) := by
   tauto
 
 -- function level 6
-example (S : Set 𝓧) : ψ '' (φ '' S) = (ψ ∘ φ) '' S := by
-  aesop
+lemma image_comp' (S : Set 𝓧) : (ψ ∘ φ) '' S = ψ '' (φ '' S) := by
+  aesop -- needs proper proof
 
 -- function level 7/7
-example (S : Set 𝓧) (T : Set 𝓨) : φ '' S ⊆ T ↔ S ⊆ φ ⁻¹' T := by
+lemma image_subset_iff' (S : Set 𝓧) (T : Set 𝓨) : φ '' S ⊆ T ↔ S ⊆ φ ⁻¹' T := by
   rw [subset_def, subset_def]
   constructor
   · intro h
@@ -493,13 +498,13 @@ section map
 
 variable (𝓕 : Filter 𝓧)
 
--- level 5
+-- level 6
 lemma map_univ_mem : univ ∈ 𝓕.map φ := by
   rw [mem_map]
   rw [preimage_univ]
   apply univ_mem
 
--- level 6
+-- level 7
 lemma map_mem_of_superset (S T : Set 𝓨)
     (hST : S ⊆ T)
     (hS : S ∈ 𝓕.map φ) :
@@ -512,7 +517,7 @@ lemma map_mem_of_superset (S T : Set 𝓨)
   apply hST
   exact hy
 
--- level 7
+-- level 8
 lemma map_inter_mem (S T : Set 𝓨)
     (hS : S ∈ 𝓕.map φ)
     (hT : T ∈ 𝓕.map φ) :
@@ -523,20 +528,31 @@ lemma map_inter_mem (S T : Set 𝓨)
   · exact hS
   · exact hT
 
--- level 8
+-- level 9
 lemma map_principal' (S : Set 𝓧) : 𝓟 (φ '' S) = (𝓟 S).map φ := by
   ext T
   rw [mem_principal, mem_map, mem_principal]
   constructor <;> simp
 
--- level 9
+-- level 10
 lemma map_mono' {𝓕₁ 𝓕₂ : Filter 𝓧} (h : 𝓕₁ ≤ 𝓕₂) : 𝓕₁.map φ ≤ 𝓕₂.map φ := by
   intro S
   intro hS
   rw [mem_map] at *
   tauto
 
--- level 10 (boss)
+variable {𝓩 : Type} (ψ : 𝓨 → 𝓩)
+
+-- level 11
+lemma map_comp {𝓕 : Filter 𝓧} : 𝓕.map (ψ ∘ φ) = (𝓕.map φ).map ψ := by
+  ext S
+  rw [mem_map]
+  rw [mem_map]
+  rw [mem_map]
+  rw [iff_iff_eq]
+  rfl -- don't tell anyone
+
+-- level 12 (final boss)
 lemma map_le_iff_le_comap' (𝓕 : Filter 𝓧) (𝓖 : Filter 𝓨) : 𝓕.map φ ≤ 𝓖 ↔ 𝓕 ≤ 𝓖.comap φ := by
   constructor
   · intro h
@@ -553,21 +569,37 @@ lemma map_le_iff_le_comap' (𝓕 : Filter 𝓧) (𝓖 : Filter 𝓨) : 𝓕.map 
     rw [mem_comap]
     tauto
 
+/-
+
+## Tendsto world
+
+-/
+
 -- def
 lemma tendsto_def' (𝓖 : Filter 𝓨) : 𝓕.Tendsto φ 𝓖 ↔ 𝓕.map φ ≤ 𝓖 := by rfl
 
+-- level 1 warm-up
 lemma tendsto_iff_comap' (𝓖 : Filter 𝓨) : 𝓕.Tendsto φ 𝓖 ↔ 𝓕 ≤ 𝓖.comap φ := by
   rw [tendsto_def']
   rw [map_le_iff_le_comap']
 
--- level 11 boss
 
 variable {𝓩 : Type} (ψ : 𝓨 → 𝓩)
 
-lemma Tendsto.comp' (𝓖 : Filter 𝓨) (𝓗 : Filter 𝓩) (h1 : 𝓕.Tendsto φ 𝓖) (h2 : 𝓖.Tendsto ψ 𝓗) : 𝓕.Tendsto (ψ ∘ φ) 𝓗 := by
+-- level 2 stuff
+lemma Tendsto.comp' (𝓖 : Filter 𝓨) (𝓗 : Filter 𝓩) (h1 : 𝓕.Tendsto φ 𝓖) (h2 : 𝓖.Tendsto ψ 𝓗) :
+    𝓕.Tendsto (ψ ∘ φ) 𝓗 := by
   rw [tendsto_def'] at *
   trans map ψ 𝓖
   sorry
   sorry
 
+-- The point of this level is that the following statement:
+-- "if a_n → ℓ as n → ∞ and if f(x) → r as x → ℓ then f(a_n) → r as n → ∞"
+-- is a special case, and so is
+-- if f(x) → ℓ as x → x₀ and g(y) → r as y → ℓ then (g∘f)(x) → r as x → x₀
+
+-- Plan after that: do other two examples of filters (n → ∞ filter and x → x₀ filter)
+-- and then prove these statements above using filters.
+-- That'll be a new limits level.
 end map

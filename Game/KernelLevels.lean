@@ -1,4 +1,4 @@
-import Game.Levels.FilterWorld.L06_inter_mem_nhds_infinity
+import Game.Levels.FilterWorld
 import Mathlib.Order.Filter.Basic
 
 -- Kernel of a filter
