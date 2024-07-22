@@ -209,7 +209,7 @@ lemma suff_large_inter_mem (S T : Set ℕ)
     specialize hN ?_
     · trans max M N
       · exact hi
-      · exact Nat.le_max_right M N -- does exact? work in NNG?
+      · exact Nat.le_max_right M N -- does `exact?` work in actual Filter Game?
     · exact hN
   · specialize hM i ?_
     · trans max M N
@@ -223,6 +223,7 @@ lemma suff_large_inter_mem (S T : Set ℕ)
 
 -- this would be useful
 lemma foo (A : Set X) (x : X) : x ∈ A ↔ ∀ B ∈ principal A, x ∈ B := by
+  -- tauto proves this
   constructor
   · intro hA B
     rw [mem_principal]
