@@ -7,8 +7,6 @@ import Mathlib.Tactic
 
 -/
 
-variable (X : Type)
-
 --#check Set.subset_refl
 --#check Set.subset_rfl
 --#check subset_rfl
@@ -16,6 +14,8 @@ variable (X : Type)
 --#check Set.subset_def
 
 namespace Set
+
+variable (X : Type)
 
 lemma subset_def' (S T : Set X) :
     S ⊆ T ↔ ∀ x, x ∈ S → x ∈ T := by rfl
@@ -131,7 +131,9 @@ open Set
 
 section principal
 
-def principal {X : Type} (A : Set X) := {B : Set X | A ⊆ B}
+variable {X : Type}
+
+def principal (A : Set X) := {B : Set X | A ⊆ B}
 
 -- axiom
 lemma mem_principal {A B : Set X} :
@@ -164,10 +166,13 @@ lemma principal_inter_mem (S T : Set X)
 
 /-
 
+# All in game up to here
+
 A filter is a collection of subsets satisfying these
 three axioms. We've just seen that every set gives a
 filter, namely the principal filter.
 
+## Some examples but we need more about inf and sup firtst
 -/
 
 end principal
@@ -201,13 +206,13 @@ lemma suff_large_inter_mem (S T : Set ℕ)
   rw [mem_setOf] at *
   cases' hS with N hN
   cases' hT with M hM
-  use max M N
+  use M ⊔ N
   intro i hi
   rw [mem_inter']
   constructor
   · specialize hN i
     specialize hN ?_
-    · trans max M N
+    · trans M ⊔ N
       · exact hi
       · exact Nat.le_max_right M N -- does `exact?` work in actual Filter Game?
     · exact hN
@@ -216,26 +221,6 @@ lemma suff_large_inter_mem (S T : Set ℕ)
       · exact hi
       · exact Nat.le_max_left M N
     · exact hM
-
--- theorem: this is not principal.
--- Indeed given any A, can find a set in P(A) but not in ... meh
--- ⊥ and ⊤ are principal so this proof might be messy.
-
--- this would be useful
-lemma foo (A : Set X) (x : X) : x ∈ A ↔ ∀ B ∈ principal A, x ∈ B := by
-  -- tauto proves this
-  constructor
-  · intro hA B
-    rw [mem_principal]
-    intro hAB
-    rw [subset_def] at hAB
-    apply hAB
-    exact hA
-  · intro h
-    specialize h A
-    apply h
-    rw [mem_principal]
-    -- rfl
 
 end suff_large
 
@@ -300,31 +285,33 @@ end nhds
 
 namespace Filter
 
+variable (𝓧 : Type)
+
 section order
 
-variable (F G : Filter X)
+variable (𝓕 𝓖 : Filter 𝓧)
 
 -- why this way around?
-lemma le_def' : F ≤ G ↔ ∀ S, S ∈ G → S ∈ F := by rfl
+lemma le_def' : 𝓕 ≤ 𝓖 ↔ ∀ S, S ∈ 𝓖 → S ∈ 𝓕 := by rfl
 
 -- because think about principal filters. The smaller the set,
 -- the bigger the number of sets which contain it!
 -- in fact let's check that that for principal filters
 -- ≤ agrees with ⊆ . Let's prove a sublemma first
 
+-- le_refl, trans, antisymm
 
-lemma le_principal (A : Set X) (F : Filter X) : F ≤ 𝓟 A ↔ A ∈ F := by
+lemma le_principal (A : Set 𝓧) (𝓕 : Filter 𝓧) : 𝓕 ≤ 𝓟 A ↔ A ∈ 𝓕 := by
   rw [le_def]
-  simp_rw [Filter.mem_principal]
   constructor
-  · intro h
-    apply h
-    apply Set.subset_refl
-  · intro h B hAB
-    apply Filter.mem_of_superset h hAB
+  · tauto
+  · intro hA S hAS
+    rw [Filter.mem_principal] at hAS
+    apply Filter.mem_of_superset hA
+    tauto
 
 -- corollary
-lemma principal_le_principal_iff (A B : Set X) :
+lemma principal_le_principal_iff (A B : Set 𝓧) :
     𝓟 A ≤ 𝓟 B ↔ A ⊆ B := by
   rw [le_principal]
   rw [mem_principal]
@@ -341,22 +328,20 @@ section functions
 Everything so far has gone on within one set X. Let's
 now introduce a second subset Y
 
+# Function world
 -/
 
-variable (X Y : Type) (f : X → Y)
-
-example (S : Set X) : Set Y := f '' S
+variable (𝓧 𝓨 : Type) (φ : 𝓧 → 𝓨)
 
 namespace Set
 
-lemma mem_image' (S : Set X) (y : Y) : y ∈ f '' S ↔ ∃ x ∈ S, f x = y := by rfl
+-- axiom for preimage of a set
+lemma mem_preimage' (T : Set 𝓨) (x : 𝓧) : x ∈ φ ⁻¹' T ↔ φ x ∈ T := by rfl
 
-lemma mem_preimage' (T : Set Y) (x : X) : x ∈ f ⁻¹' T ↔ f x ∈ T := by rfl
+variable (𝓩 : Type) (ψ : 𝓨 → 𝓩)
 
-variable (Z : Type) (g : Y → Z)
-
--- sublemma
-lemma preimage_univ' : f ⁻¹' univ = univ := by
+-- function level 1
+lemma preimage_univ' : φ ⁻¹' univ = univ := by
   ext x
   constructor
   · intro _h
@@ -365,8 +350,9 @@ lemma preimage_univ' : f ⁻¹' univ = univ := by
     rw [mem_preimage]
     apply mem_univ
 
-lemma preimage_inter' {T₁ T₂ : Set Y} :
-    f ⁻¹' (T₁ ∩ T₂) = f ⁻¹' T₁ ∩ f ⁻¹' T₂ := by
+-- function level 2
+lemma preimage_inter' {T₁ T₂ : Set 𝓨} :
+    φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂ := by
   ext x
   rw [mem_preimage]
   rw [mem_inter_iff]
@@ -375,26 +361,30 @@ lemma preimage_inter' {T₁ T₂ : Set Y} :
   rw [mem_preimage]
   -- rfl
 
--- sublemma
+-- function level 3
+lemma preimage_mono' {T₁ T₂ : Set 𝓨} (h : T₁ ⊆ T₂) : φ ⁻¹' T₁ ⊆ φ ⁻¹' T₂ := by
+  tauto
 
--- example (U : Set Z) : f ⁻¹' (g ⁻¹' U) = (g ∘ f) ⁻¹' U := by
---   ext x
---   rw [mem_preimage]
---   rw [mem_preimage]
---   rw [mem_preimage]
---   rw [Function.comp_apply]
---   -- rfl
+-- introduce as new axiom axiom
+lemma mem_image' (S : Set 𝓧) (y : 𝓨) : y ∈ φ '' S ↔ ∃ x ∈ S, φ x = y := by rfl
 
--- example (S : Set X) : g '' (f '' S) = (g ∘ f) '' S := by
---   ext z
---   rw [mem_image]
---   rw [mem_image]
---   simp_rw [mem_image]
---   -- bleurgh
---   sorry
+-- function level 4
+lemma image_preimage_subset' (T : Set 𝓨) : φ '' (φ ⁻¹' T) ⊆ T := by
+  intro y
+  rintro ⟨x, hx, rfl⟩
+  exact hx
 
--- tendsto for sets
-example (S : Set X) (T : Set Y) : f '' S ⊆ T ↔ S ⊆ f ⁻¹' T := by
+-- function level 5
+lemma subset_preimage_image' (S : Set 𝓧) : S ⊆ φ ⁻¹' (φ '' S) := by
+  intro x hx
+  tauto
+
+-- function level 6
+example (S : Set 𝓧) : ψ '' (φ '' S) = (ψ ∘ φ) '' S := by
+  aesop
+
+-- function level 7/7
+example (S : Set 𝓧) (T : Set 𝓨) : φ '' S ⊆ T ↔ S ⊆ φ ⁻¹' T := by
   rw [subset_def, subset_def]
   constructor
   · intro h
@@ -424,13 +414,22 @@ end Set
 
 namespace Filter
 
+/-
+
+# Pushing forward and pulling back filters
+
+-/
 -- let's try pulling them back first.
 
 section comap
-variable (G : Filter Y)
+variable (𝓖 : Filter 𝓨)
 
-lemma comap_univ_mem : univ ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A} := by
-  rw [mem_setOf]
+-- axiom mem_comap
+lemma mem_comap''' {A : Set 𝓧} : A ∈ 𝓖.comap φ ↔ ∃ B ∈ 𝓖, φ ⁻¹' B ⊆ A := Iff.rfl
+
+-- level 1
+lemma comap_univ_mem : univ ∈ 𝓖.comap φ := by
+  rw [mem_comap]
   use univ
   constructor
   · apply Filter.univ_mem
@@ -438,11 +437,12 @@ lemma comap_univ_mem : univ ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A} := by
     intro x _hx
     apply mem_univ
 
-lemma comap_mem_of_superset (S T : Set X)
+-- level 2
+lemma comap_mem_of_superset (S T : Set 𝓧)
     (hST : S ⊆ T)
-    (hS : S ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A}) :
-    T ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A} := by
-  rw [mem_setOf] at *
+    (hS : S ∈ 𝓖.comap φ) :
+    T ∈ 𝓖.comap φ := by
+  rw [mem_comap] at *
   rcases hS with ⟨B, hBG, hS⟩
   use B
   use hBG
@@ -450,11 +450,12 @@ lemma comap_mem_of_superset (S T : Set X)
   · exact hS
   · exact hST
 
-lemma comap_inter_mem (S T : Set X)
-    (hS : S ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A})
-    (hT : T ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A}) :
-    S ∩ T ∈ {A | ∃ B ∈ G, f ⁻¹' B ⊆ A} := by
-  rw [mem_setOf] at *
+-- level 3
+lemma comap_inter_mem (S T : Set 𝓧)
+    (hS : S ∈ 𝓖.comap φ)
+    (hT : T ∈ 𝓖.comap φ) :
+    S ∩ T ∈ 𝓖.comap φ := by
+  rw [mem_comap] at *
   rcases hS with ⟨U, hU1, hU2⟩
   rcases hT with ⟨V, hV1, hV2⟩
   use U ∩ V
@@ -472,22 +473,38 @@ lemma comap_inter_mem (S T : Set X)
       rw [mem_preimage]
       exact h2
 
+-- level 4
+lemma comap_principal' (T : Set 𝓨) : 𝓟 (φ ⁻¹' T) = (𝓟 T).comap φ := by
+  ext S
+  rw [mem_principal, mem_comap]
+  tauto
+
+-- level 5
+lemma comap_mono' {𝓖₁ 𝓖₂ : Filter 𝓨} (h : 𝓖₁ ≤ 𝓖₂) : 𝓖₁.comap φ ≤ 𝓖₂.comap φ := by
+  intro S
+  intro hS
+  rw [mem_comap] at *
+  obtain ⟨T, hT, hTS⟩ := hS
+  tauto
+
 end comap
 
 section map
 
-variable (F : Filter X)
+variable (𝓕 : Filter 𝓧)
 
-lemma map_univ_mem : univ ∈ {B | f ⁻¹' B ∈ F} := by
-  rw [mem_setOf]
+-- level 5
+lemma map_univ_mem : univ ∈ 𝓕.map φ := by
+  rw [mem_map]
   rw [preimage_univ]
   apply univ_mem
 
-lemma map_mem_of_superset (S T : Set Y)
+-- level 6
+lemma map_mem_of_superset (S T : Set 𝓨)
     (hST : S ⊆ T)
-    (hS : S ∈ {B | f ⁻¹' B ∈ F}) :
-    T ∈ {B | f ⁻¹' B ∈ F} := by
-  rw [mem_setOf] at *
+    (hS : S ∈ 𝓕.map φ) :
+    T ∈ 𝓕.map φ := by
+  rw [mem_map] at *
   apply mem_of_superset hS
   rw [subset_def] at *
   intro y hy
@@ -495,14 +512,64 @@ lemma map_mem_of_superset (S T : Set Y)
   apply hST
   exact hy
 
-lemma map_inter_mem (S T : Set Y)
-    (hS : S ∈ {B | f ⁻¹' B ∈ F})
-    (hT : T ∈ {B | f ⁻¹' B ∈ F}) :
-    S ∩ T ∈ {B | f ⁻¹' B ∈ F} := by
-  rw [mem_setOf] at *
+-- level 7
+lemma map_inter_mem (S T : Set 𝓨)
+    (hS : S ∈ 𝓕.map φ)
+    (hT : T ∈ 𝓕.map φ) :
+    S ∩ T ∈ 𝓕.map φ := by
+  rw [mem_map] at *
   rw [preimage_inter]
   apply inter_mem
   · exact hS
   · exact hT
 
+-- level 8
+lemma map_principal' (S : Set 𝓧) : 𝓟 (φ '' S) = (𝓟 S).map φ := by
+  ext T
+  rw [mem_principal, mem_map, mem_principal]
+  constructor <;> simp
+
+-- level 9
+lemma map_mono' {𝓕₁ 𝓕₂ : Filter 𝓧} (h : 𝓕₁ ≤ 𝓕₂) : 𝓕₁.map φ ≤ 𝓕₂.map φ := by
+  intro S
+  intro hS
+  rw [mem_map] at *
+  tauto
+
+-- level 10 (boss)
+lemma map_le_iff_le_comap' (𝓕 : Filter 𝓧) (𝓖 : Filter 𝓨) : 𝓕.map φ ≤ 𝓖 ↔ 𝓕 ≤ 𝓖.comap φ := by
+  constructor
+  · intro h
+    intro S
+    rw [mem_comap]
+    intro h
+    obtain ⟨T, hT, hTS⟩ := h
+    refine Filter.mem_of_superset ?_ hTS
+    apply h -- pro move
+    exact hT
+  · intro h S hSG
+    rw [mem_map]
+    apply h
+    rw [mem_comap]
+    tauto
+
+-- def
+lemma tendsto_def' (𝓖 : Filter 𝓨) : 𝓕.Tendsto φ 𝓖 ↔ 𝓕.map φ ≤ 𝓖 := by rfl
+
+lemma tendsto_iff_comap' (𝓖 : Filter 𝓨) : 𝓕.Tendsto φ 𝓖 ↔ 𝓕 ≤ 𝓖.comap φ := by
+  rw [tendsto_def']
+  rw [map_le_iff_le_comap']
+
+-- level 11 boss
+
+variable {𝓩 : Type} (ψ : 𝓨 → 𝓩)
+
+lemma Tendsto.comp' (𝓖 : Filter 𝓨) (𝓗 : Filter 𝓩) (h1 : 𝓕.Tendsto φ 𝓖) (h2 : 𝓖.Tendsto ψ 𝓗) : 𝓕.Tendsto (ψ ∘ φ) 𝓗 := by
+  rw [tendsto_def'] at *
+  trans map ψ 𝓖
+
+  apply map_mono
+
+
+  sorry
 end map
