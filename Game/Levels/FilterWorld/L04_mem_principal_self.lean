@@ -19,8 +19,14 @@ open Filter
 
 TheoremTab "Filter"
 
+/-- A set `A` is an element of the principal filter `𝓟 A`. -/
+TheoremDoc MyGame.mem_principal_self as "mem_principal_self" in "Filter"
+
 -- TODO needs proof! Also needs hints for new users
+/-- A set `A` is an element of the principal filter `𝓟 A`. -/
 Statement mem_principal_self (A : Set 𝓧) : A ∈ 𝓟 A := by
   sorry
+
+
 
 Conclusion "Let's now talk about an order on filters."

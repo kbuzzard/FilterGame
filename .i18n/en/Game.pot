@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 20:03:17 2024\n"
+"POT-Creation-Date: Mon Jul 22 20:32:16 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -660,14 +660,13 @@ msgstr ""
 msgid "Like in Set World, we'll fix a \"base set\" `𝓧`, and all our\n"
 "sets will be subsets of `𝓧`.\n"
 "\n"
-"Let `A` be a subset of `𝓧`. Here's the key definition.\n"
+"Before I give you the *definition* of a filter, I will give you an *example*.\n"
 "\n"
-"Let `𝓟 A` denote the set of *all* the subsets of `𝓧` which contain `A`. In\n"
-"particular, `𝓟 A` is a *set of sets*. It's called `𝓟` because this\n"
-"is the *principal filter* associated to `A`.\n"
+"Let `A` be a subset of `𝓧`. We are going to define the *principal filter*\n"
+"associated to `A`. It is a *set of subsets* of `𝓧`, called `𝓟 A`.\n"
+"A subset `S` is in `𝓟 A` if and only if `A ⊆ S`.\n"
 "\n"
-"The name of the key fact you need to know about `𝓟 A`, namely\n"
-"`S ∈ 𝓟 A ↔ A ⊆ S`, is called `mem_principal`. This is true by definition.\n"
+"The name of this key fact `S ∈ 𝓟 A ↔ A ⊆ S` is `mem_principal`.\n"
 "\n"
 "In the first three levels of this game, we'll prove three easy facts\n"
 "about `𝓟 A` using `mem_principal`. The first one is about the set\n"
@@ -745,98 +744,71 @@ msgstr ""
 msgid "You just proved the three axioms of a filter."
 msgstr ""
 
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "Infinitely big numbers."
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "`A ∈ 𝓟 A`"
 msgstr ""
 
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "Let's see an example of a filter which isn't principal,\n"
-"the \"neighbourhoods of infinity\" filter `𝓝∞` on the natural numbers."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "`mem_ninf` is the proof that `S ∈ 𝓝∞ ↔ ∃ N, ∀ i, N ≤ i → i ∈ S`. This is\n"
-"true because it's precisely the *definition* of `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "## Summary\n"
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "Here's another fact about principal filters, which isn't an axiom of a filter\n"
+"but which might be handy later.\n"
 "\n"
-"If the goal is `∃ N, blah blah blah` then to prove such a statement, you\n"
-"have to show that some `N` exists which makes `blah blah blah` true.\n"
-"If you think `N = 37` works, then `use 37` will remove the `∃`\n"
-"and replace all `N`s in `blah blah blah` by 37.\n"
+"**TODO** needs proof in repo\n"
+"**TODO** Is this level too boring? Should it be removed"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "A set `A` is an element of the principal filter `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "A set `A` is an element of the principal filter `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "Let's now talk about an order on filters."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "Ordering on filters"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "The thing you need to remember about filters right now: a filter on `𝓧` is a big\n"
+"collection of subsets of `𝓧`. They satisfy some axioms, but we don't care about the axioms\n"
+"right now.\n"
 "\n"
-"Note: `use` is a dangerous tactic. If you `use` the wrong number,\n"
-"you can turn a true goal into a false one.\n"
+"What we care about is the following observation. If `A` is a *small* set, then the filter `𝓟 A`\n"
+"contains *lots* of sets, because it contains all sets bigger than `A` and `A` is only small.\n"
+"In contrast, if `A` is a *big* set, there are only a few sets in `𝓟 A`. So the bigger the\n"
+"set, the fewer sets the filter has in it. This motivates the following *backwards* definition:\n"
 "\n"
-"### Example\n"
+"If `𝓕` and `𝓖` are filters on `𝓧`, we say `𝓕 ≤ 𝓖` if every subset `S ∈ 𝓖` satisfies `𝓢 ∈ 𝓕`.\n"
 "\n"
-"If the goal is `∃ N, N + N = 4` then `use 2` will turn the\n"
-"goal into `2 + 2 = 4`, and `use 37` will turn the goal\n"
-"into `37 + 37 = 4`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "`univ` is an element of `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "Start with `rw [mem_ninf]`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "To prove an \"exists\" goal we use the `use` tactic. Try `use 37`\n"
-"and Lean will replace `N` with `37`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "Can you take it from here?"
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_univ_mem_nhds_infinity
-msgid "Let's now prove the other two filter axioms for `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "The superset axiom for `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "In this level, we'll show that if `S ∈ 𝓝∞` then any\n"
-"bigger set `T ⊇ S` is also in `𝓝∞`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "## Summary\n"
+"The lemma `le_def` says `𝓕 ≤ 𝓖 ↔ ∀ S ∈ 𝓖, S ∈ 𝓕`.\n"
 "\n"
-"If you have a *hypothesis* `h : ∃ N, blah blah blah` then the hypothesis says\n"
-"that *some* `N` exists with some property. But you don't *actually have* an `N`\n"
-"in your variables, just a promise that it exists.\n"
+"Let's now prove some lemmas about this new `≤` function.\n"
 "\n"
-"Get that `N` with `cases' h with N hN`."
+"TODO is le_refl too boring or a good start?"
 msgstr ""
 
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "If `S ∈ 𝓝∞` and `S ⊆ T` then `T ∈ 𝓝∞`."
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "`le_def` is the definition of `≤` on filters."
 msgstr ""
 
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "Start with `rw [mem_ninf] at *` to remove all mention of `𝓝∞`."
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "This is the theorem that `𝓕 ≤ 𝓕` for filters."
 msgstr ""
 
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "You now need to get to that `N` whose existence is guaranteed by `hS`. Do\n"
-"this with `cases' hS with D hD`"
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "`𝓕 ≤ 𝓕`."
 msgstr ""
 
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "I didn't write any more hints yet, but can you do it from here? Tell me where you get stuck\n"
-"and I'll put more hints in!"
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "Start with `rw [le_def]`"
 msgstr ""
 
-#: Game.Levels.FilterWorld.L05_mem_nhds_infinity_of_superset
-msgid "Just `𝓝∞` and intersections left!"
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "Let's now talk about an order on filters."
 msgstr ""
 
 #: Game.Levels.FilterWorld
