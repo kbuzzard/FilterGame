@@ -47,6 +47,9 @@ TheoremDoc MyGame.le_refl as "le_refl" in "Filter"
 Statement le_refl (𝓕 : Filter 𝓧) : 𝓕 ≤ 𝓕 := by
   Hint "Start with `rw [le_def]`"
   rw [le_def]
-  sorry
+  intro S
+  intro Z
+  exact Z
+
 
 Conclusion "Let's now talk about an order on filters."

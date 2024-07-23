@@ -23,6 +23,8 @@ TheoremDoc MyGame.le_trans as "le_trans" in "Filter"
 Statement le_trans {𝓕 𝓖 𝓗 : Filter 𝓧} (h1 : 𝓕 ≤ 𝓖) (h2 : 𝓖 ≤ 𝓗) : 𝓕 ≤ 𝓗 := by
   Hint "Start with `rw [le_def] at *`"
   rw [le_def] at *
-  sorry
+  Hint "Can you find a way to use `subset_trans`?"
+  apply subset_trans h2 h1
+
 
 Conclusion "Next let's prove antisymmetry."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 21:17:29 2024\n"
+"POT-Creation-Date: Tue Jul 23 14:54:04 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -832,6 +832,10 @@ msgid "Start with `rw [le_def] at *`"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L06_le_trans
+msgid "Can you find a way to use `subset_trans`?"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L06_le_trans
 msgid "Next let's prove antisymmetry."
 msgstr ""
 
@@ -858,6 +862,10 @@ msgid "Two filters are equal if and only if they are the same collection of sets
 msgstr ""
 
 #: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Try using `rw[le_def] at *`"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
 msgid "Next let's relate `≤` to principal filters."
 msgstr ""
 
@@ -875,10 +883,6 @@ msgstr ""
 
 #: Game.Levels.FilterWorld.L08_le_principal
 msgid "The filter `𝓕` is `≤` the principal filter `A` if and only if `A ∈ 𝓕`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L08_le_principal
-msgid "Let's now deduce that `≤` on principal filters agrees with `⊆` on sets."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L09_principal_mono
@@ -904,7 +908,7 @@ msgid "The final thing we'll do this in world is to prove that if `𝓟 A = 𝓟
 msgstr ""
 
 #: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
-msgid "`principal_inj`."
+msgid "`principal_eq_iff_eq`."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L10_principal_eq_iff_eq

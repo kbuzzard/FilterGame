@@ -25,6 +25,11 @@ Statement le_antisymm {𝓕 𝓖 : Filter 𝓧} (h1 : 𝓕 ≤ 𝓖) (h2 : 𝓖 
   This is an extensionality principle (two things are the same if they're made up of
   the same stuff). So start with `ext S`."
   ext S
-  tauto -- is there a better proof?
+  constructor
+  Hint "Try using `rw[le_def] at *`"
+  rw[le_def] at *
+  apply h2
+  rw[le_def] at *
+  apply h1
 
 Conclusion "Next let's relate `≤` to principal filters."
