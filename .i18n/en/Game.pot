@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 22 21:17:29 2024\n"
+"POT-Creation-Date: Thu Jul 25 08:59:29 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -904,7 +904,7 @@ msgid "The final thing we'll do this in world is to prove that if `𝓟 A = 𝓟
 msgstr ""
 
 #: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
-msgid "`principal_inj`."
+msgid "`principal_eq_iff_eq`."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L10_principal_eq_iff_eq
@@ -978,7 +978,7 @@ msgid "# Welcome to the Filter Game\n"
 "In this game I will assume you know the following basic Lean tactics:\n"
 "`intro`, `apply`, `exact` and `rw`. If you don't know these tactics, then you could\n"
 "try playing a few worlds in the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4).\n"
-"If you've platyed through Tutorial World, Addition World and Implication World in that\n"
+"If you've played through Tutorial World, Addition World and Implication World in that\n"
 "game, then you know enough about Lean to play the Filter Game.\n"
 "\n"
 "## Getting started\n"
