@@ -40,7 +40,7 @@ on GitHub, and even clone it yourself and add your own levels if you want.
 In this game I will assume you know the following basic Lean tactics:
 `intro`, `apply`, `exact` and `rw`. If you don't know these tactics, then you could
 try playing a few worlds in the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4).
-If you've platyed through Tutorial World, Addition World and Implication World in that
+If you've played through Tutorial World, Addition World and Implication World in that
 game, then you know enough about Lean to play the Filter Game.
 
 ## Getting started
