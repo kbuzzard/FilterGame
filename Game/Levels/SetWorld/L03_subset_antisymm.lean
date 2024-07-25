@@ -7,7 +7,7 @@ Title "Set inclusion is antisymmetric"
 
 Introduction "The subset relation `⊆` is a *partial order*. This means that it's reflexive,
 transitive, and antisymmetric. In this level we learn two new tactics
-to prove that if `S ⊆ T` and `T ⊆ S` then `S = T`."
+to prove antisymmetry of `⊆`, which is the statement that if `S ⊆ T` and `T ⊆ S` then `S = T`."
 
 namespace MyGame
 
@@ -50,7 +50,8 @@ TheoremDoc MyGame.subset_antisymm as "subset_antisymm" in "Set"
 Statement subset_antisymm {S T : Set 𝓧} (hST : S ⊆ T) (hTS : T ⊆ S) : S = T := by
   Hint "We have to prove that two sets are equal. It's an axiom of mathematics
     (\"set extensionality\") that two sets are equal if they have the same elements.
-    In Lean the `ext` tactic applies this axiom. Start with `ext a`."
+    In Lean the `ext` tactic applies this axiom. Click on the `ext` tactic on the right
+    to learn how to use it (it's in yellow). Then start with `ext a`."
   ext a
   Hint "We now have to prove an if and only if statement `P ↔ Q`, which is the same as proving
   `P → Q` and `Q → P`. Now use the `constructor` tactic to split the goal up into these two goals."
