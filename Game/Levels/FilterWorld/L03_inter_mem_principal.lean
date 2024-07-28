@@ -20,7 +20,8 @@ open Filter
 Statement {A S T : Set 𝓧} (hAS : S ∈ 𝓟 A) (hAT : T ∈ 𝓟 A) : S ∩ T ∈ 𝓟 A := by
   Hint "Start with `rw [mem_principal] at *` to remove all mention of `𝓟`."
   rw [mem_principal] at *
-  Hint "Now you can `apply subset_inter`"
+  Hint "Now find a relevant theorem to `apply`. You might want to guess the
+  name of the theorem before you switch to the `Set` tab to find it."
   apply subset_inter
   · exact hAS
   · exact hAT
