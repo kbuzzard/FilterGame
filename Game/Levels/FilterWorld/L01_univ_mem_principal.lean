@@ -43,7 +43,8 @@ NewTheorem MyGame.mem_principal
 Statement (A : Set 𝓧) : univ ∈ 𝓟 A := by
   Hint "Start with `rw [mem_principal]`."
   rw [mem_principal]
-  Hint "Now `apply` a theorem we proved already to finish the job."
+  Hint "Now `apply` a theorem we proved already to finish the job. Take a look at the `Set` tab
+  in the `Theorems` panel on the right to remind yourself of the theorems we've proved about sets."
   apply subset_univ
 
 Conclusion "Let's now prove two more basic facts about `𝓟 A`."
