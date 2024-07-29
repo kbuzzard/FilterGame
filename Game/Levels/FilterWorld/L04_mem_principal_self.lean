@@ -30,6 +30,6 @@ rw[mem_principal]
 
 Conclusion "Wooah! If you did `rw [mem_principal]` then the goal was closed
 automatically! This is because `rw` tries `rfl` afterwards, and `⊆` is reflexive
-so the tactic works.
+so `rfl` works and closes the goal completely.
 
 Let's now talk about an order on filters."
