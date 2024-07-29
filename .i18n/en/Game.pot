@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jul 23 14:54:04 2024\n"
+"POT-Creation-Date: Mon Jul 29 16:08:20 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -749,23 +749,26 @@ msgid "`A ∈ 𝓟 A`"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L04_mem_principal_self
-msgid "Here's another fact about principal filters, which isn't an axiom of a filter\n"
-"but which might be handy later.\n"
+msgid "Here's another fact about principal filters, which isn't\n"
+"one of the axioms of a filter, but is handy to have around: it's\n"
+"part of a robust \"API\" for principal filters (i.e., standard lemmas\n"
+"which are useful to have). See if you can prove it yourself."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "A set `A` is an element of the principal filter `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "A set `A` is an element of the principal filter `𝓟 A`."
+msgstr ""
+
+#: Game.Levels.FilterWorld.L04_mem_principal_self
+msgid "Wooah! If you did `rw [mem_principal]` then the goal was closed\n"
+"automatically! This is because `rw` tries `rfl` afterwards, and `⊆` is reflexive\n"
+"so the tactic works.\n"
 "\n"
-"**TODO** needs proof in repo\n"
-"**TODO** Is this level too boring? Should it be removed"
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_mem_principal_self
-msgid "A set `A` is an element of the principal filter `𝓟 A`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_mem_principal_self
-msgid "A set `A` is an element of the principal filter `𝓟 A`."
-msgstr ""
-
-#: Game.Levels.FilterWorld.L04_mem_principal_self
-msgid "Let's now talk about an order on filters."
+"Let's now talk about an order on filters."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L05_le_refl
@@ -808,7 +811,12 @@ msgid "Start with `rw [le_def]`"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L05_le_refl
-msgid "Let's now talk about an order on filters."
+msgid "See if you can take it from here!"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L05_le_refl
+msgid "You've just proved that `≤` is reflexive!\n"
+"Let's see if you can prove that `≤` is also transitive in the next level."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L06_le_trans
@@ -836,7 +844,7 @@ msgid "Can you find a way to use `subset_trans`?"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L06_le_trans
-msgid "Next let's prove antisymmetry."
+msgid "You've just proved that `≤` is transitive! Next up we have antisymmetry."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L07_le_antisymm
@@ -866,6 +874,10 @@ msgid "Try using `rw[le_def] at *`"
 msgstr ""
 
 #: Game.Levels.FilterWorld.L07_le_antisymm
+msgid "Can you take it from here?"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L07_le_antisymm
 msgid "Next let's relate `≤` to principal filters."
 msgstr ""
 
@@ -885,6 +897,26 @@ msgstr ""
 msgid "The filter `𝓕` is `≤` the principal filter `A` if and only if `A ∈ 𝓕`."
 msgstr ""
 
+#: Game.Levels.FilterWorld.L08_le_principal
+msgid "Start with `rw [le_def]`"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L08_le_principal
+msgid "Do you remember how to split up an iff statement into two cases?"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L08_le_principal
+msgid "Try `specialize h A`"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L08_le_principal
+msgid "See if you can take it from here!"
+msgstr ""
+
+#: Game.Levels.FilterWorld.L08_le_principal
+msgid "Let's now deduce that `≤` on principal filters agrees with `⊆` on sets."
+msgstr ""
+
 #: Game.Levels.FilterWorld.L09_principal_mono
 msgid "Principal filters and `≤`."
 msgstr ""
@@ -895,11 +927,11 @@ msgid "Let's prove that `≤` on filters \"extends\" `⊆` on sets. In other wor
 msgstr ""
 
 #: Game.Levels.FilterWorld.L09_principal_mono
-msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`."
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` ."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L09_principal_mono
-msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`."
+msgid "If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` ."
 msgstr ""
 
 #: Game.Levels.FilterWorld.L09_principal_mono
