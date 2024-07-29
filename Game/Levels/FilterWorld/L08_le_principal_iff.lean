@@ -16,7 +16,6 @@ namespace MyGame
 variable {𝓧 : Type}
 
 open Filter
-#check mem_of_superset
 
 lemma mem_of_superset {𝓕 : Filter 𝓧} {A B : Set 𝓧} (hA : A ∈ 𝓕)
     (hAB : A ⊆ B) : B ∈ 𝓕 := Filter.mem_of_superset hA hAB
