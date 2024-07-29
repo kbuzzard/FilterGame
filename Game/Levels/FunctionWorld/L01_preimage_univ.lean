@@ -40,6 +40,7 @@ NewTheorem MyGame.mem_preimage
 
 /-- The preimage of `univ` is `univ`. -/
 Statement : φ ⁻¹' univ = univ := by
-  sorry -- need proof and hints. Start with ext because it's equality of two sets.
+sorry
+   -- need proof and hints. Start with ext because it's equality of two sets.
 
 Conclusion "There are 6 more levels, all currently explained in the LMSfiltergame.lean file in the repo."

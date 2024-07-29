@@ -18,9 +18,8 @@ If `𝓕` and `𝓖` are filters on `𝓧`, we say `𝓕 ≤ 𝓖` if every subs
 
 The lemma `le_def` says `𝓕 ≤ 𝓖 ↔ ∀ S ∈ 𝓖, S ∈ 𝓕`.
 
-Let's now prove some lemmas about this new `≤` function.
+Let's now prove some lemmas about this new `≤` function."
 
-TODO is le_refl too boring or a good start?"
 
 namespace MyGame
 
@@ -42,11 +41,15 @@ NewTheorem MyGame.le_def
 /-- This is the theorem that `𝓕 ≤ 𝓕` for filters. -/
 TheoremDoc MyGame.le_refl as "le_refl" in "Filter"
 
--- TODO needs proof! Also needs hints for new users
 /-- `𝓕 ≤ 𝓕`. -/
 Statement le_refl (𝓕 : Filter 𝓧) : 𝓕 ≤ 𝓕 := by
   Hint "Start with `rw [le_def]`"
   rw [le_def]
-  sorry
+  Hint "See if you can take it from here!"
+  intro S
+  intro Z
+  exact Z
 
-Conclusion "Let's now talk about an order on filters."
+
+Conclusion "You've just proved that `≤` is reflexive!
+Let's see if you can prove that `≤` is also transitive in the next level. "
