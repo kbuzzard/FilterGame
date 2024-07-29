@@ -21,7 +21,6 @@ TheoremTab "Filter"
 /-- If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` . -/
 TheoremDoc MyGame.principal_mono as "principal_mono" in "Filter"
 
--- **TODO** needs human-readable proof, or explanation of tauto?
 /--  If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` . -/
 Statement principal_mono {A B : Set 𝓧} : 𝓟 A ≤ 𝓟 B ↔ A ⊆ B := by
   rw [le_principal_iff]
