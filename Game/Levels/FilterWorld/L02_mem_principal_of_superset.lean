@@ -22,7 +22,9 @@ Statement {A S T : Set 𝓧} (hAS : S ∈ 𝓟 A) (hST : S ⊆ T) : T ∈ 𝓟 A
   Hint "Start with `rw [mem_principal] at *` to remove all mention of `𝓟`."
   rw [mem_principal] at *
   Hint "Now you can finish with `exact subset_trans hAS hST`. You can think of `subset_trans` as
-  a *function* which takes two proofs as input, and returns a proof as output. "
+  a *function* which takes two proofs as input, and returns another proof as output.
+  For example, if you give this functions proofs of `A ⊆ S` and `S ⊆ T`, it will return a proof
+  of `A ⊆ T`, which is `exact`ly what we want."
   exact subset_trans hAS hST
 
 Conclusion "Now let's show a fact about `𝓟 A` and intersections."
