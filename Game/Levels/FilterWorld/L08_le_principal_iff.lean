@@ -44,10 +44,10 @@ NewTheorem MyGame.mem_of_superset
 TheoremTab "Filter"
 
 /-- The filter `𝓕` is `≤` the principal filter `𝓟 A` if and only if `A ∈ 𝓕`. -/
-TheoremDoc MyGame.le_principal as "le_principal" in "Filter"
+TheoremDoc MyGame.le_principal_iff as "le_principal_iff" in "Filter"
 
 /-- The filter `𝓕` is `≤` the principal filter `A` if and only if `A ∈ 𝓕`. -/
-Statement le_principal {𝓕 : Filter 𝓧} {A : Set 𝓧} : 𝓕 ≤ 𝓟 A ↔ A ∈ 𝓕 := by
+Statement le_principal_iff {𝓕 : Filter 𝓧} {A : Set 𝓧} : 𝓕 ≤ 𝓟 A ↔ A ∈ 𝓕 := by
 Hint "Start with `rw [le_def]`"
 rw [le_def]
 Hint "Do you remember how to split up an iff statement into two cases?"
