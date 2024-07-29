@@ -19,23 +19,20 @@ TheoremTab "Filter"
 /-- If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` . -/
 TheoremDoc MyGame.principal_mono as "principal_mono" in "Filter"
 
--- **TODO** needs human-readable proof, or explanation of tauto?
 /--  If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B` . -/
 Statement principal_mono {A B : Set 𝓧} : 𝓟 A ≤ 𝓟 B ↔ A ⊆ B := by
 constructor
-rw[le_def] at *
+Hint "Try `intro h`"
 intro h
-specialize h A
-rw [mem_principal] at h
-rw [mem_principal] at h
-intro x
-rw [subset_def] at h
-specialize h 
-sorry
-sorry
+apply h
+exact mem_principal_self B
+Hint "Try `intro h`"
+intro h
+Hint "use `intro S hS` and see if you can finish it off!"
+intro S hS
+rw [mem_principal] at *
+exact subset_trans h hS
 
-
-  
   
 
 Conclusion "The final thing we'll do this in world is to prove that if `𝓟 A = 𝓟 B` then `A = B`.
