@@ -16,10 +16,9 @@ open Filter
 
 TheoremTab "Filter"
 
-/-- If `A` and `B` are subsets of `𝓧` then `𝓟 A ≤ 𝓟 B ↔ A ⊆ B`. -/
-TheoremDoc MyGame.principal_mono as "principal_mono" in "Filter"
+/-- If `A` and `B` are subsets of `𝓧` then `𝓟 A = 𝓟 B ↔ A = B` . -/
+TheoremDoc MyGame.principal_eq_iff_eq as "principal_eq_iff_eq" in "Filter"
 
--- **TODO** needs human-readable proof, or explanation of tauto?
 /--  If `A` and `B` are subsets of `𝓧` then `𝓟 A = 𝓟 B ↔ A = B`. -/
 Statement principal_eq_iff_eq {A B : Set 𝓧} : 𝓟 A = 𝓟 B ↔ A = B := by
   constructor
@@ -48,4 +47,4 @@ fact that right now both function world and the pushing/pulling filter world are
 made yet. Check out `https://github.com/kbuzzard/FilterGame/blob/main/Game/LMSfiltergame.lean`
 (search for \"# Function World\" and \"# Pushing forward and pulling back filters\") to
 see the levels which should go into this world, and feel free to make a pull request
-if you want to add some new levels!""
+if you want to add some new levels!"
