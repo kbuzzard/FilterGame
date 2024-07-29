@@ -21,9 +21,11 @@ Statement {A S T : Set 𝓧} (hAS : S ∈ 𝓟 A) (hAT : T ∈ 𝓟 A) : S ∩ T
   Hint "Start with `rw [mem_principal] at *` to remove all mention of `𝓟`."
   rw [mem_principal] at *
   Hint "Now find a relevant theorem to `apply`. You might want to guess the
-  name of the theorem before you switch to the `Set` tab to find it."
+  name of the theorem before you switch to the `Set` tab to find it.
+  Alternatively you can feed the theorem exactly the right inputs and use
+  `exact` directly."
   apply subset_inter
   · exact hAS
   · exact hAT
 
-Conclusion "You just proved the three axioms of a filter."
+Conclusion "You just proved that `𝓟 A` satisfied the three axioms of a filter."
