@@ -40,7 +40,15 @@ NewTheorem MyGame.mem_preimage
 
 /-- The preimage of `univ` is `univ`. -/
 Statement : φ ⁻¹' univ = univ := by
-sorry
-   -- need proof and hints. Start with ext because it's equality of two sets.
+   Hint "Start in the usual way using `ext` and `constructor` to turn the equality in the goal into two implications."
+   ext x
+   constructor
+   Hint "We can actually prove the first implication without using the definition of a preimage. Can you see how? If you are stuck, take a look back at what we proved in Set World."
+   · intro _h
+     apply mem_univ
+   Hint "For the next part you will have to use `rw [mem_preimage]` to turn the statement `x ∈ φ ⁻¹' univ` into something you can work with. Take a look at the `Function` tab in the `Theorems` panel to see the definition of `mem_preimage`."
+   · intro _h
+     rw [mem_preimage]
+     apply mem_univ
 
 Conclusion "There are 6 more levels, all currently explained in the LMSfiltergame.lean file in the repo."
