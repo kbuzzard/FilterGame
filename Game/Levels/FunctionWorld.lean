@@ -1,4 +1,6 @@
 import Game.Levels.FunctionWorld.L01_preimage_univ
+import Game.Levels.FunctionWorld.L02_preimage_inter
+import Game.Levels.FunctionWorld.L03_preimage_mono
 
 World "FunctionWorld"
 Title "Sets and functions"
