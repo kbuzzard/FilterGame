@@ -5,7 +5,9 @@ Level 2
 
 Title "The preimage of a set under a function."
 
-Introduction "In this level we shall prove that preimages preserve intersections. That is, for a function `φ : 𝓧 → 𝓨` and sets `T₁,T₂` in `𝓨` we have `φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂`."
+Introduction "In this level we shall prove that preimages preserve intersections.
+That is, for a function `φ : 𝓧 → 𝓨` and sets `T₁,T₂` in `𝓨` we have
+`φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂`."
 
 namespace MyGame
 
@@ -20,7 +22,7 @@ TheoremDoc MyGame.preimage_inter as "preimage_inter" in "Function"
 
 /-- The preimage of an intersection is the intersection of preimages i.e. `φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂`. -/
 Statement preimage_inter: φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂ := by
-  Hint "Given the equality of sets in the goal start with `ext`."
+  Hint "We need to prove an equality of sets, so start with `ext`."
   ext
   Hint "It is possible to continue using the `constructor` tactic as we have done before. Instead, see if you can find a shorter proof using `rw` statements and the theorems on intersections."
   rw [mem_inter_iff]
