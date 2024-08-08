@@ -14,28 +14,23 @@ Click \"Start →\" to continue."
 
 **TODO**
 
--- function level 2
-lemma preimage_inter' {T₁ T₂ : Set 𝓨} :
-    φ ⁻¹' (T₁ ∩ T₂) = φ ⁻¹' T₁ ∩ φ ⁻¹' T₂ := by
+Future levels (note: stick to mathlib naming convention and implicit input convention 100%)
 
--- function level 3
-lemma preimage_mono' {T₁ T₂ : Set 𝓨} (h : T₁ ⊆ T₂) : φ ⁻¹' T₁ ⊆ φ ⁻¹' T₂ := by
-
--- introduce as new axiom axiom
-lemma mem_image' (S : Set 𝓧) (y : 𝓨) : y ∈ φ '' S ↔ ∃ x ∈ S, φ x = y := by rfl
+-- introduce as new axiom
+lemma mem_image (φ : 𝓧 → 𝓨) (S : Set 𝓧) (y : 𝓨) : y ∈ φ '' S ↔ ∃ x ∈ S, φ x = y := by rfl
 
 -- function level 4
-lemma image_preimage_subset' (T : Set 𝓨) : φ '' (φ ⁻¹' T) ⊆ T := by
+lemma image_preimage_subset (φ : 𝓧 → 𝓨) (T : Set 𝓨) : φ '' (φ ⁻¹' T) ⊆ T := by
 
 -- function level 5
-lemma subset_preimage_image' (S : Set 𝓧) : S ⊆ φ ⁻¹' (φ '' S) := by
+lemma subset_preimage_image (φ : 𝓧 → 𝓨) (S : Set 𝓧) : S ⊆ φ ⁻¹' (φ '' S) := by
 
 -- function level 6
-lemma image_comp' (S : Set 𝓧) : (ψ ∘ φ) '' S = ψ '' (φ '' S) := by
+lemma image_comp (φ : 𝓧 → 𝓨) (ψ : 𝓨 → 𝓩) (S : Set 𝓧) : (ψ ∘ φ) '' S = ψ '' (φ '' S) := by
   aesop -- needs proper proof
 
 -- function level 7/7
-lemma image_subset_iff' (S : Set 𝓧) (T : Set 𝓨) : φ '' S ⊆ T ↔ S ⊆ φ ⁻¹' T := by
+lemma image_subset_iff' {S : Set 𝓧} {T : Set 𝓨} {φ : 𝓧 → 𝓨}  : φ '' S ⊆ T ↔ S ⊆ φ ⁻¹' T := by
   rw [subset_def, subset_def]
 
 -/
