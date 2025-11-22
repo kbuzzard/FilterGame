@@ -6,15 +6,23 @@ def leanVersion : String := s!"v{Lean.versionString}"
 
 def LocalGameServer : Dependency := {
   name := `GameServer
-  src := Source.path "../lean4game/server"
+  scope := "kbuzzard"
+  src? := DependencySrc.path "../lean4game/server"
+  version? := none
+  opts := ∅
 }
 
 def RemoteGameServer : Dependency := {
   name := `GameServer
-  src := Source.git "https://github.com/leanprover-community/lean4game.git" leanVersion "server"
+  scope := "kbuzzard"
+  src? := DependencySrc.git "https://github.com/leanprover-community/lean4game.git" leanVersion "server"
+  version? := s!"git#{leanVersion}"
+  opts := ∅
 }
 
-/- Choose GameServer dependency depending on the environment variable `LEAN4GAME`. -/
+/-
+Choose GameServer dependency depending on whether `-Klean4game.local` has been passed to `lake`.
+-/
 open Lean in
 #eval (do
   let gameServerName := if get_config? lean4game.local |>.isSome then
@@ -22,17 +30,22 @@ open Lean in
   modifyEnv (fun env => Lake.packageDepAttr.ext.addEntry env gameServerName)
   : Elab.Command.CommandElabM Unit)
 
-/-! # USER SECTION
+/-!
+# USER DEPENDENCIES
 
 Below are all the dependencies the game needs. Add or remove packages here as you need them.
 
 Note: If your package (like `mathlib` or `Std`) has tags of the form `v4.X.0` then
-you can use `require mathlib from git "[URL]" @ leanVersion`
+you can use
+
+```
+require "leanprover-community" / mathlib @ git leanVersion
+```
  -/
 
 
 
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "v4.7.0"
+require "leanprover-community" / mathlib @ git leanVersion
 
 
 
