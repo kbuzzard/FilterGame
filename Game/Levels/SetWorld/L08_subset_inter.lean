@@ -34,5 +34,4 @@ Statement subset_inter {A S T : Set 𝓧} (hAS : A ⊆ S) (hAT : A ⊆ T) :
   · exact hAT _ hx
 
 Conclusion "That's enough practice with sets. You can either now do some practice
-with functions in Function World (the theorems are proved but are yet to be made
-into levels), or you can start to learn about filters in Filter World."
+with functions in Function World, or you can start to learn about filters in Filter World."

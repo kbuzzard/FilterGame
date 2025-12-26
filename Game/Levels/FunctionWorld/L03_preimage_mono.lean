@@ -30,7 +30,7 @@ Statement preimage_mono (h : T₁ ⊆ T₂)  : φ ⁻¹' T₁ ⊆ φ ⁻¹' T₂
   apply h at p
   exact p
 
-Conclusion "The last three levels have involved a fair bit of repetitive work: we've been doing a lot of rewriting definitions or proving statements you can obviously see to be true. Lean has a solution to this tedium, namely the tactic `tauto`. It is designed to solve goals that are logical tautologies but it also does quite a bit of work in unpacking definitions. See the `Tactics` tab for more.
+Conclusion "The last three levels have involved a fair bit of repetitive work: we've been doing a lot of rewriting definitions or proving statements you can obviously see to be true. Lean has a solution to this tedium, namely the tactic `tauto`. It is designed to solve goals that are logical tautologies but it also does quite a bit of work in unpacking definitions. See the Tactics tab for more.
 
 It turns out the last three levels can be solved by `tauto` alone! Don't believe it? Go back and give it a try.
 

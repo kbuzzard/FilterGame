@@ -9,16 +9,16 @@ Introduction "Now we will fix two \"base sets\" `𝓧` and `𝓨`, and let's als
 fix a function `φ : 𝓧 → 𝓨`.
 
 In this world we'll learn about pushing forward subsets of `𝓧` along `φ`
-to get subsets of `𝓨`, and pulling back subsets of `𝓨`.
+to get subsets of `𝓨`, and pulling back subsets of `𝓨` to get subsets of `𝓧`.
 
 This is preparation for pushing forward and pulling back filters, but
 we'll get to that later.
 
 Let's start with preimages. If `T` is a subset of `𝓨` then the *preimage* of `T`
-along φ is the subset of `𝓧` consisting of all the `x : 𝓧` such that `φ x ∈ T`.
+along `φ` is the subset of `𝓧` consisting of all the `x : 𝓧` such that `φ x ∈ T`.
 
 The notation for this in the books is often `φ⁻¹ T`, but in Lean `φ⁻¹` is reserved for
-inverses in group theory, so we use `φ ⁻¹'` to do preimages of sets.
+inverses in group theory, so we use `φ ⁻¹'` to denote preimages of sets.
 
 Finally, recall that `univ` is the subset of a type containing all terms of the type,
 and that `mem_univ x` is a proof of `x ∈ univ` which you can `apply`."
